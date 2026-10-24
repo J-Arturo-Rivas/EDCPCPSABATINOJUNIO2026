@@ -9,8 +9,8 @@
     --color-cafe-navbar: #b39b7d;
     --color-cafe-footer: #b39b7d;
     --color-cafe-logo: #7a4f2b;
-    --color-rojo-titulos: #a52020;
-    --color-rojo-botones: #a52020;
+    --color-rojo-titulos: #7b1c1c; /* Rojo vino para títulos */
+    --color-rojo-botones: #a52020; /* Rojo vino para botones */
     --color-texto-principal: #333333;
     --color-texto-secundario: #777777;
     --color-gris-borde: #e0e0e0;
@@ -57,14 +57,13 @@ header .logo {
     letter-spacing: -1px;
 }
 
-/* --- ACTUALIZACIÓN: Contenedor de la barra de búsqueda --- */
 header .formulario-busqueda {
     display: flex;
     align-items: center;
     background-color: var(--color-fondo-claro);
     border: 1px solid var(--color-gris-borde);
     border-radius: 25px;
-    padding: 5px 10px 5px 20px; /* Espacio interno para que respire */
+    padding: 5px 10px 5px 20px;
     width: 380px;
 }
 
@@ -78,7 +77,6 @@ header .formulario-busqueda input {
     color: var(--color-texto-principal);
 }
 
-/* --- NUEVO: Botón de la lupa --- */
 header .boton-buscar {
     background: transparent;
     border: none;
@@ -91,16 +89,9 @@ header .boton-buscar {
     transition: opacity 0.3s ease;
 }
 
-header .boton-buscar:hover {
-    opacity: 1;
-}
+header .boton-buscar:hover { opacity: 1; }
+header .boton-buscar img { width: 18px; height: 18px; }
 
-header .boton-buscar img {
-    width: 18px;
-    height: 18px;
-}
-
-/* Iconos de usuario */
 header .iconos-usuario {
     display: flex;
     gap: 15px;
@@ -149,7 +140,7 @@ nav ul.menu-principal li a:hover { color: #f0e6d2; }
     position: relative;
     width: 100%;
     height: 400px;
-    background-image: url('banner.jpg'); /* Asegúrate de tener esta imagen o cambia la URL */
+    background-image: url('banner.jpg'); 
     background-color: #4a3b2c;
     background-size: cover;
     background-position: center;
@@ -191,24 +182,71 @@ nav ul.menu-principal li a:hover { color: #f0e6d2; }
 }
 
 /* ==========================================================================
-   5. SECCIONES DE LIBROS
+   5. SECCIONES DE LIBROS (Recomendaciones y Libros)
    ========================================================================== */
 section { margin-bottom: 70px; }
 
+/* Encabezado de la sección para alinear título y botón "Ver más" */
+.encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
 .titulo-seccion {
     font-family: var(--fuente-titulos);
-    color: var(--color-rojo-titulos);
+    color: var(--color-rojo-titulos); /* Rojo vino */
     font-size: 1.8rem;
-    margin-bottom: 30px;
     font-weight: 700;
+    text-align: left; /* Alineado a la izquierda */
 }
 
-.grid-libros {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+/* Botón "Ver más" a la derecha */
+.enlace-ver-mas {
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 
+.enlace-ver-mas:hover {
+    color: var(--color-rojo-titulos);
+}
+
+/* ==========================================================================
+   ACTUALIZACIÓN: Contenedor unificado para el Carrusel Horizontal
+   ========================================================================== */
+.carrusel-libros {
+    display: flex; /* Requerido por el checklist */
+    gap: 25px;
+    overflow-x: auto; /* Scroll horizontal */
+    overflow-y: hidden;
+    padding-bottom: 20px; /* Espacio para la barra de scroll */
+    scroll-behavior: smooth;
+}
+
+/* Personalización de la barra de scroll (Webkit) */
+.carrusel-libros::-webkit-scrollbar {
+    height: 8px; /* Barra delgada */
+}
+
+.carrusel-libros::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Fondo gris claro */
+    border-radius: 4px;
+}
+
+.carrusel-libros::-webkit-scrollbar-thumb {
+    background: var(--color-rojo-botones); /* Color rojo de la tienda */
+    border-radius: 4px;
+}
+
+.carrusel-libros::-webkit-scrollbar-thumb:hover {
+    background: #8b1a1a; /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Tarjetas de libros */
 .tarjeta-libro {
     background: var(--color-blanco);
     padding: 15px;
@@ -216,21 +254,36 @@ section { margin-bottom: 70px; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease;
+    /* Sombra suave y bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Ancho fijo para las tarjetas en el carrusel */
+    min-width: 220px; 
+    max-width: 220px;
+    flex: 0 0 auto; /* Evita que se encojan */
 }
 
-.tarjeta-libro:hover { transform: translateY(-5px); }
+.tarjeta-libro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
+/* Imágenes con altura fija y object-fit: cover */
 .tarjeta-libro img {
-    height: 260px;
-    object-fit: contain;
-    margin: 0 auto 15px auto;
+    height: 280px;
+    width: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el espacio */
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
 .tarjeta-libro h3 {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 5px;
+    color: var(--color-texto-principal);
 }
 
 .tarjeta-libro .autor-libro {
@@ -243,23 +296,28 @@ section { margin-bottom: 70px; }
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 15px;
+    color: var(--color-texto-principal);
 }
 
+/* Botón "Agregar al carrito" */
 .tarjeta-libro button {
-    background-color: var(--color-rojo-botones);
-    color: var(--color-blanco);
+    background-color: var(--color-rojo-botones); /* Fondo rojo vino */
+    color: var(--color-blanco); /* Texto blanco */
     border: none;
-    padding: 8px 15px;
-    font-size: 0.75rem;
+    padding: 10px 15px;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    width: 100%;
-    border-radius: 2px;
+    width: 100%; /* Ancho del 100% de la tarjeta */
+    border-radius: 25px; /* Bordes redondeados */
     transition: background-color 0.3s;
+    margin-top: auto;
 }
 
-.tarjeta-libro button:hover { background-color: #8b1a1a; }
+.tarjeta-libro button:hover {
+    background-color: #8b1a1a;
+}
 
 /* ==========================================================================
    6. SECCIÓN CONÓCENOS
@@ -399,7 +457,6 @@ footer {
 
 @media (max-width: 768px) {
     header .contenedor { flex-direction: column; gap: 15px; }
-    /* Actualización para móvil: la barra de búsqueda ocupa el 100% */
     header .formulario-busqueda { width: 100%; } 
     nav ul.menu-principal { flex-wrap: wrap; gap: 15px; }
     .seccion-banner h1 { font-size: 2rem; }
