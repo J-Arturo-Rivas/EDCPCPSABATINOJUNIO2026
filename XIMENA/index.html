@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Túnel | Librería y Experiencias</title>
     <!-- Enlace al archivo de estilos externo -->
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Fuentes de Google (Tipografía Serif para el logo y Sans para el cuerpo) -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Iconos (usando FontAwesome para redes y carrito) -->
@@ -14,16 +14,12 @@
 <body>
 
     <!-- BLOQUE: Cabecera Principal (Header) -->
-    <!-- Contiene el logo, la barra de búsqueda y acciones de usuario -->
     <header class="cabecera-principal" id="cabecera-global">
         <div class="contenedor-header">
-            
-            <!-- Logotipo tipográfico -->
             <div class="marca-logo">
                 <a href="/" class="enlace-logo">El Túnel</a>
             </div>
 
-            <!-- Área de interacción: Buscador y Perfil -->
             <div class="zona-interaccion">
                 <form class="buscador-principal" action="/buscar" method="GET" role="search">
                     <input type="text" name="q" placeholder="Buscar..." class="input-busqueda" aria-label="Buscar libros">
@@ -44,8 +40,7 @@
         </div>
     </header>
 
-    <!-- BLOQUE: Navegación Principal (Nav) -->
-    <!-- Sticky navigation que se queda fija al hacer scroll -->
+    <!-- BLOQUE: Navegación Principal -->
     <nav class="navegacion-principal" id="menu-navegacion">
         <ul class="lista-enlaces">
             <li><a href="/inicio" class="enlace-nav activo">Inicio</a></li>
@@ -57,36 +52,38 @@
     </nav>
 
     <!-- BLOQUE: Hero Banner (Portada) -->
-    <!-- Sección visual grande con imagen de fondo y llamado a la acción (CTA) -->
     <section class="banner-hero" id="seccion-hero">
-        <div class="capa-superposicion"></div> <!-- Oscurece la imagen para legibilidad -->
+        <!-- Imagen de fondo: Estantería de madera con libros (Unsplash) -->
+        <div class="capa-superposicion"></div>
         <div class="contenido-hero">
             <h1 class="titulo-eslogan">...Creando nuevos mundos, historias y recuerdos</h1>
             <p class="subtitulo-hero">"Una vuelta al encuentro, un refugio en cada página"</p>
         </div>
     </section>
 
-    <!-- BLOQUE: Recomendaciones (Grid de Tarjetas) -->
+    <!-- BLOQUE: Recomendaciones -->
     <section class="seccion-recomendados" id="recomendaciones">
         <div class="contenedor-estandar">
             <h2 class="titulo-seccion">Recomendaciones</h2>
             
             <div class="cuadricula-libros">
-                <!-- Tarjeta Individual: Producto -->
+                <!-- Tarjeta 1: Harry Potter -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/200x300?text=Harry+Potter" alt="Portada de Harry Potter y la piedra filosofal">
+                        <!-- Imagen real de portada de libro (Unsplash) -->
+                        <img src="https://imgs.search.brave.com/TsXBzxAmbt8HW9u1bw8O1ZYEVbsnFfBLOxj4yh_Wxm0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGliY2llbnRpZmlj/YS5jb20vaW1hZ2Vu/ZXMvOTc4ODQ5OC85/Nzg4NDk4Mzg5NDgu/R0lG.gif">
                     </div>
                     <div class="info-libro">
-                        <h3 class="titulo-libro">Harry Potter y la piedra</h3>
+                        <h3 class="titulo-libro">Harry Potter y la piedra filosofal</h3>
                         <p class="autor-libro">J.K. Rowling</p>
                         <button class="boton-comprar">VER MÁS</button>
                     </div>
                 </article>
 
+                <!-- Tarjeta 2: Cien Años de Soledad -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/200x300?text=Cien+Años" alt="Portada de Cien años de soledad">
+                        <img src="https://imgs.search.brave.com/R4NDXAeNjP8mql0RNQiuB4Z4xOnCLaRYDMoaiklQU1U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuY2VnYWwuZXMv/aW1hZ2VuZXMvbWFy/Y2FkYXMvOTc4ODQ5/Ny85Nzg4NDk3NTky/MjAuZ2lm.gif">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">Cien años de soledad</h3>
@@ -95,9 +92,10 @@
                     </div>
                 </article>
 
+                <!-- Tarjeta 3: La Insoportable Levedad -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/200x300?text=Insoportable" alt="Portada de La insoportable levedad del ser">
+                        <img src="https://imgs.search.brave.com/uUR-V2KcGbRBhrqu5UX6ZtfHG2ImPfpSn-0MApoV3Lo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93bWFn/YXppbi5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDYv/RWxsaWJyb3F1ZXJl/Z2FsYXJpYW5sb3Ns/aWJyZXJvcy1MbG9y/ZW5zLUxhaW5zb3Bv/cnRhYmxlbGV2ZWRh/ZGRlbHNlci1LdW5k/ZXJhLXBvcnRhZGEt/V01hZ2F6aW4tNjYy/eDEwMjQuanBn">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">La insoportable levedad</h3>
@@ -106,9 +104,10 @@
                     </div>
                 </article>
 
+                <!-- Tarjeta 4: Como Agua para Chocolate -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/200x300?text=Como+Agua" alt="Portada de Como agua para chocolate">
+                        <img src="https://imgs.search.brave.com/h5UY8MWjO3Bf91U1uZCdDh9pLhla42lTKbF6W_SV0yM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52b2d1ZS5teC9w/aG90b3MvNjUxMGJi/YzY1YTdlMTVmOWVl/ZjMwZDEzL21hc3Rl/ci93XzE2MDAsY19s/aW1pdC9jb21vLWFn/dWEtcGFyYS1jaG9j/b2xhdGUtbGlicm8t/bGF1cmEtZXNxdWl2/ZWwuanBn">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">Como agua para chocolate</h3>
@@ -120,7 +119,7 @@
         </div>
     </section>
 
-    <!-- BLOQUE: Carrusel de Libros (Novedades/Ofertas) -->
+    <!-- BLOQUE: Carrusel de Libros -->
     <section class="seccion-catalogo" id="catalogo-destacado">
         <div class="contenedor-estandar">
             <div class="cabecera-seccion-flex">
@@ -128,13 +127,12 @@
                 <a href="/todos" class="enlace-ver-todo">Ver más</a>
             </div>
 
-            <!-- Contenedor con scroll horizontal -->
             <div class="carrusel-horizontal">
                 
                 <!-- Item 1 -->
                 <article class="tarjeta-libro tarjeta-compacta">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/150x220?text=Fuertes" alt="Portada Fuertes es el silencio">
+                        <img src="https://imgs.search.brave.com/6u9SLoAeqPyOGiBsAJFiYJP9oeKlwHbefpyOk3Rv03U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2FuZG9ybWFyYWku/Y29tL2ltYWdlbmVz/Lzk3ODYwNzMvOTc4/NjA3MzkwNDY1Lndl/YnA">
                     </div>
                     <h3 class="titulo-libro">Fuertes es el silencio</h3>
                     <p class="precio-libro">$450.00</p>
@@ -144,7 +142,7 @@
                 <!-- Item 2 -->
                 <article class="tarjeta-libro tarjeta-compacta">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/150x220?text=Rayuela" alt="Portada Rayuela">
+                        <img src="https://imgs.search.brave.com/8FwySAjfISlD_3ZvxFkcFUUSYMbemii2G177PG3nHrc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDcuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvNDcvOTc4/ODQzNzYyNDc0Ny53/ZWJw">
                     </div>
                     <h3 class="titulo-libro">Rayuela</h3>
                     <p class="precio-libro">$445.00</p>
@@ -154,7 +152,7 @@
                 <!-- Item 3 -->
                 <article class="tarjeta-libro tarjeta-compacta">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/150x220?text=Brujerias" alt="Portada La ley de Herodes">
+                        <img src="https://imgs.search.brave.com/dsDThgq0dUGJ1T8pPN0onPvuMCYrJNEJgLj4XcbZNt4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF3YUhyamt5dUwu/anBn">
                     </div>
                     <h3 class="titulo-libro">La ley de Herodes</h3>
                     <p class="precio-libro">$150.00</p>
@@ -164,7 +162,7 @@
                 <!-- Item 4 -->
                 <article class="tarjeta-libro tarjeta-compacta">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/150x220?text=Aritmética" alt="Portada Aritmética de la vida">
+                        <img src="https://imgs.search.brave.com/zL94w1JoIMPolcXCFcud5k1MKdO7SXg3iHXXjSxjd-Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFIQ085OHFJUkwu/anBn">
                     </div>
                     <h3 class="titulo-libro">Aritmética de la vida</h3>
                     <p class="precio-libro">$350.00</p>
@@ -174,7 +172,7 @@
                 <!-- Item 5 -->
                 <article class="tarjeta-libro tarjeta-compacta">
                     <div class="marco-imagen">
-                        <img src="https://via.placeholder.com/150x220?text=Habladme" alt="Portada Una habitación propia">
+                        <img src="https://imgs.search.brave.com/a1DJJpfzRgDL7ADxhZyND8m1aMkpLtIHEYgqWjwWjTM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RiL2Q2/L2E5L2RiZDZhOTBh/OWQ3YzdjNjE3ZTUx/NjhlN2UzMGNhMjRi/LmpwZw">
                     </div>
                     <h3 class="titulo-libro">Una habitación propia</h3>
                     <p class="precio-libro">$240.00</p>
@@ -188,7 +186,6 @@
     <!-- BLOQUE: Sobre Nosotros / Experiencia -->
     <section class="seccion-experiencia" id="conocenos">
         <div class="contenedor-doble">
-            <!-- Columna de Texto -->
             <div class="columna-texto">
                 <h2 class="titulo-seccion">Conócenos</h2>
                 <p class="parrafo-descripcion">
@@ -200,9 +197,9 @@
                 <a href="/experiencia" class="boton-outline">¡Te esperamos!</a>
             </div>
             
-            <!-- Columna de Imagen -->
             <div class="columna-imagen">
-                <img src="https://via.placeholder.com/600x400?text=Interior+Libreria" alt="Interior acogedor de la librería El Túnel" class="imagen-libreria">
+                <!-- Imagen real de un interior de librería/cafetería acogedora -->
+                <img src="https://imgs.search.brave.com/iuIN6RVCENm9izCyahL94d7wuBOifDvYVjKXZIc0QAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjAx/MDkyMzc4Ny9lcy9m/b3RvL2xpYnJvcy1l/bi1saWJyZXIlQzMl/QURhLWxpYnJvcy1h/LWxhLXZlbnRhLWVu/LW1lc2EtZW5mb3F1/ZS1zZWxlY3Rpdm8t/Y29uY2VwdG8tZGUt/bGl0ZXJhdHVyYS15/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz01YjQ2Mkl1S0RZ/ZFNlc05WRzVCSHVO/YzM3NmNwclYwejUw/MGNhVm9XNjdzPQ" alt="Interior acogedor de la librería El Túnel" class="imagen-libreria">
             </div>
         </div>
     </section>
@@ -211,7 +208,6 @@
     <footer class="pie-pagina" id="footer-global">
         <div class="contenedor-footer">
             
-            <!-- Columna 1: Info de Contacto -->
             <div class="columna-footer marca-footer">
                 <h3 class="titulo-footer">El Túnel</h3>
                 <p class="texto-footer">Un espacio para los amantes de la literatura. Encuentra tu próxima lectura.</p>
@@ -227,7 +223,6 @@
                 </div>
             </div>
 
-            <!-- Columna 2: Enlaces Legales -->
             <div class="columna-footer">
                 <h4 class="subtitulo-footer">Información</h4>
                 <ul class="lista-enlaces-footer">
@@ -240,7 +235,6 @@
                 </ul>
             </div>
 
-            <!-- Columna 3: Newsletter -->
             <div class="columna-footer">
                 <h4 class="subtitulo-footer">Suscríbete</h4>
                 <p class="texto-footer-pequeno">Recibe noticias de promociones y novedades.</p>
