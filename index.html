@@ -217,3 +217,123 @@
 
 </body>
 </html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Túnel - Librería</title>
+    
+    <!-- Enlace a los iconos de FontAwesome (CDN equivalente a Iconos8) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">El Túnel</div>
+        
+        <!-- Barra de Búsqueda -->
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Buscar por título o autor...">
+        </div>
+
+        <!-- Iconos de Usuario y Carrito -->
+        <div class="header-icons">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-heart"></i>
+            <div class="cart-icon-container" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <!-- Contador del carrito -->
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Libros</a>
+        <a href="#">Los más leídos</a>
+        <a href="#">Accesorios</a>
+        <a href="#">Sucursal</a>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="hero">
+        <h1>...Creando nuevos mundos, historias y recuerdos</h1>
+        <p>"Siempre concluí, es encontrar futuros recuerdos"</p>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <h2 class="section-title">Recomendaciones</h2>
+        
+        <!-- Filtros por Categoría -->
+        <div class="filters" id="filterContainer">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="Ficción">Ficción</button>
+            <button class="filter-btn" data-category="Poesía">Poesía</button>
+            <button class="filter-btn" data-category="Novela">Novela</button>
+            <button class="filter-btn" data-category="Clásico">Clásico</button>
+        </div>
+
+        <!-- Grid donde se inyectan los libros con JS -->
+        <div class="books-grid" id="booksGrid"></div>
+
+        <!-- Contenedor de Paginación -->
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- MODAL DEL CARRITO DE COMPRAS -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="cartItemsContainer">
+                <!-- Los items se inyectan con JS -->
+            </div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <div class="cart-actions">
+                <button class="btn-clear" id="clearCartBtn">Vaciar Carrito</button>
+                <button class="btn-checkout" id="checkoutBtn">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div>
+            <h3>El Túnel</h3>
+            <p style="font-size: 0.8rem; line-height: 1.4;">Un espacio para los amantes de la literatura. Encuentra tu próxima lectura favorita.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+        <div>
+            <h3>Información</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Libros</li>
+                <li>Los más leídos</li>
+                <li>Accesorios</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Sucursal</h3>
+            <p style="font-size: 0.9rem;"><i class="fas fa-map-marker-alt"></i> Av. Álvaro Obregón 99, Roma Norte, CDMX</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-phone"></i> 55 88 99 87</p>
+        </div>
+        <div>
+            <h3>Suscríbete</h3>
+            <p style="font-size: 0.8rem; margin-bottom: 10px;">Recibe noticias de promociones y eventos.</p>
+            <input type="email" placeholder="Tu email" style="padding: 5px; width: 100%;">
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
