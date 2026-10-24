@@ -13,10 +13,8 @@
         <div class="contenedor">
             <a href="#" class="logo">El Túnel</a>
             
-            <!-- ACTUALIZACIÓN: Formulario de búsqueda -->
             <form action="#" method="GET" class="formulario-busqueda">
                 <input type="text" name="q" placeholder="Buscar..." required>
-                <!-- ACTUALIZACIÓN: Botón de la lupa -->
                 <button type="submit" class="boton-buscar">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="Buscar">
                 </button>
@@ -46,7 +44,6 @@
     <!-- ================= MAIN ================= -->
     <main>
         
-        <!-- Banner Principal -->
         <section class="seccion-banner">
             <div class="texto-banner">
                 <h1>...Creando nuevos mundos, historias y recuerdos</h1>
@@ -55,83 +52,123 @@
         </section>
 
         <div class="contenedor">
-            <!-- Sección 1: Recomendaciones -->
+            <!-- Sección 1: Recomendaciones (ACTUALIZADA a Carrusel) -->
             <section>
-                <h2 class="titulo-seccion">Recomendaciones</h2>
-                <div class="grid-libros">
-                    <!-- Libro 1 -->
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Recomendaciones</h2>
+                    <!-- Se puede omitir el "Ver más" aquí si no lo deseas, pero lo dejo por consistencia -->
+                    <a href="#" class="enlace-ver-mas">Ver más</a>
+                </div>
+                
+                <!-- Cambiado de .grid-libros a .carrusel-libros -->
+                <div class="carrusel-libros">
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/N5nMu5i4oFZ_BzQ-BGxNxMuRBukB8CkfLIFJcc0gvLs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y3VldmFuYTNzLmJl/c3QvdW5zYWZlL3Jz/OmZpdDozNjAvcTo3/MC9wbGFpbi90bWRi/L3QvcC93NTAwLy93/dU1jMDhJUEtFYXRm/OXJuTU5YdklEeHFQ/NFcuanBn" alt="Harry Potter"></a>
+                        <a href="#">
+                        <img src="harry-potter.jpg" alt="Harry Potter y la piedra">
+                    </a>
                         <h3>Harry Potter y la piedra</h3>
                         <p class="autor-libro">J.K. Rowling</p>
-                        <button>Ver más</button>
+                        <button>Agregar al carrito</button>
                     </div>
-                    <!-- Libro 2 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/Ex5scjS31K7p2CSh_gZ1Wps_u81Rw6rzEB4Aj-Me6Ug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxOGdvTk9CU1VM/LmpwZw" alt="Cien años de soledad"></a>
+                         <a href="#">
+                        <img src="cien-anos.jpg" alt="Cien años de soledad">
+                    </a>
                         <h3>Cien años de soledad</h3>
                         <p class="autor-libro">Gabriel García Márquez</p>
-                        <button>Ver más</button>
+                        <button>Agregar al carrito</button>
                     </div>
-                    <!-- Libro 3 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/3WBSkRcL2-kjZx4uSxa3W_mnon8HoFGX_yYw2DY0gRI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzN4VUFB/ZVN3OXpkcGgwcjEv/cy1sNTAwLmpwZw" alt="La insoportable levedad del ser"></a>
+                        <a href="#">
+                        <img src="insoportable.jpg" alt="La insoportable levedad del ser">
+                    </a>
                         <h3>La insoportable levedad del ser</h3>
                         <p class="autor-libro">Milan Kundera</p>
-                        <button>Ver más</button>
+                        <button>Agregar al carrito</button>
                     </div>
-                    <!-- Libro 4 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/Y_1zs9kRoNkOIxPdq-Lw8JeJrdizNA9Sw2DusmXGFXA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW5k/dWxvLmNvbS9pbWFn/ZW5lcy85NzgwMzg1/Lzk3ODAzODU3MjEy/My5HSUY.gif" alt="Como agua para chocolate"></a>
+                         <a href="#">
+                        <img src="como-agua.jpg" alt="Como agua para chocolate">
+                    </a>
                         <h3>Como agua para chocolate</h3>
                         <p class="autor-libro">Laura Esquivel</p>
-                        <button>Ver más</button>
+                        <button>Agregar al carrito</button>
+                    </div>
+                    <!-- Libro extra para forzar el scroll en Recomendaciones -->
+                    <div class="tarjeta-libro">
+                         <a href="#">
+                        <img src="fuerte-es-el-silencio.jpg" alt="Fuerte es el silencio">
+                    </a>
+                        <h3>Una habitación propia</h3>
+                        <p class="autor-libro">Virginia Woolf</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                  <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/NDetHJzSItOtHdE8BfkONMwaOziLMVDU_N-SBqp0zeE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9xdWVs/aWJyb2xlby5jb20v/aW1hZ2VzL2xpYnJv/cy9saWJyby0xNTkx/MDIxNjIwLmpwZw" alt="El señor de las moscas"></a>
+                        <h3>El señor de las moscas</h3>
+                        <p class="autor-libro">William Golding</p>
+                        <button>Agregar al carrito</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección 2: Libros -->
+            <!-- Sección 2: Libros (Carrusel Horizontal) -->
             <section>
-                <h2 class="titulo-seccion">Libros</h2>
-                <div class="grid-libros">
-                    <!-- Libro 5 -->
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Libros</h2>
+                    <a href="#" class="enlace-ver-mas">Ver más</a>
+                </div>
+                
+                <div class="carrusel-libros">
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/wC4eqV3hV0vJmVTmINMN-UmW9V89hvv1FHg88GSmBdU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEzZU14d2hDZEwu/anBn" alt="Fuerte es el silencio"></a>
+                        <a href="#"><img src="https://imgs.search.brave.com/mzfX8ZyNyujPeuWIhb5xKdH8Dq2zCQgZoQ2WRA4iMPk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zY2hh/dmVsem9uZ3JhaGFt/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS8wOS9wb25p/YXRvd3NrYV9mdWVy/dGVfZXNfZWxfc2ls/ZW5jaW9fcGxhbmV0/YV93ZWJfMS5qcGc" alt="Fuerte es el silencio"></a>
                         <h3>Fuerte es el silencio</h3>
                         <p class="autor-libro">Elena Poniatowska</p>
                         <p class="precio">$450.00</p>
                         <button>Comprar</button>
                     </div>
-                    <!-- Libro 6 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/u3-qi6cGMpI0aE9p_xD_X_6fcqF4TDm3M1SvX5j63BM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDYuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvMDYvOTc4/ODQ2NjMzMTkwNi53/ZWJw" alt="Rayuela"></a>
+                         <a href="#">
+                        <img src="rayuela.jpg" alt="Rayuela">
+                    </a>
                         <h3>Rayuela</h3>
                         <p class="autor-libro">Julio Cortázar</p>
                         <p class="precio">$445.00</p>
                         <button>Comprar</button>
                     </div>
-                    <!-- Libro 7 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/cg7TB13D0ihT6yzRCnDYWUOjGiHKkMPnda1cj_IolKI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmZpbG1hZmZpbml0/eS5jb20vbGFfbGV5/X2RlX2hlcm9kZXMt/MTQyMzczMjIwLW1t/ZWQuanBn" alt="La ley de los héroes"></a>
-                        <h3>La ley de los herodes</h3>
+                        <a href="#">
+                        <img src="ley-de-heroes.jpg" alt="La ley de los héroes">
+                    </a>
+                        <h3>La ley de los héroes</h3>
                         <p class="autor-libro">Jorge Ibargüengoitia</p>
                         <p class="precio">$150.00</p>
                         <button>Comprar</button>
                     </div>
-                    <!-- Libro 8 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/ANALI1ejVLL9sGSrEeJJHB_jk-1hS1f2ad0hU_H6tSo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmZpbG1hZmZpbml0/eS5jb20vYXJyYW5j/YW1lX2xhX3ZpZGFf/dGVhcl90aGlzX2hl/YXJ0X291dC00MzA3/ODk4NzgtbW1lZC5q/cGc" alt="Arráncame la vida"></a>
+                         <a href="#">
+                        <img src="arrancame-la-vida.jpg" alt="Arráncame la vida">
+                    </a>
                         <h3>Arráncame la vida</h3>
                         <p class="autor-libro">Ángeles Mastretta</p>
                         <p class="precio">$350.00</p>
                         <button>Comprar</button>
                     </div>
-                    <!-- Libro 9 -->
                     <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/E2jXWTlBzDMsSFp-SCKCHpifkKk6jsLutglpOwE0j9o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW5k/dWxvLmNvbS9pbWFn/ZW5lcy85Nzg4NDkx/Lzk3ODg0OTEwNTgz/My5HSUY.gif" alt="Una habitación propia"></a>
+                        <a href="#">
+                        <img src="una-habitacion.jpg" alt="Una habitación propia">
+                    </a>
                         <h3>Una habitación propia</h3>
                         <p class="autor-libro">Virginia Woolf</p>
                         <p class="precio">$240.00</p>
+                        <button>Comprar</button>
+                    </div>
+                    <!-- Libro extra para forzar el scroll en Libros -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/cqf3YW87iP2CQuDy16PWhBSkRBz95P-34wnaUyNUNUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zczM2/NS5saXZlcnBvb2wu/Y29tLm14L3hsLzEx/OTA0MjI2MDMuanBn" alt="Las Batallas en el Desierto"></a>
+                        <h3>Las Batallas en el Desierto</h3>
+                        <p class="autor-libro">Autor de Prueba</p>
+                        <p class="precio">$300.00</p>
                         <button>Comprar</button>
                     </div>
                 </div>
