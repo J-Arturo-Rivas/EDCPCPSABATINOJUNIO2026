@@ -400,3 +400,63 @@ footer ul li {
     .hero h1 { font-size: 1.8rem; }
     .modal-content { width: 95%; }
 }
+/* ========================================== */
+/* ESTILOS PARA LA SECCIÓN CONÓCENOS          */
+/* ========================================== */
+
+.conocenos-section {
+    display: flex;
+    align-items: center; /* Centra verticalmente texto e imagen */
+    gap: 40px; /* Espacio entre texto e imagen */
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd; /* Línea sutil de separación */
+}
+
+.conocenos-texto {
+    flex: 1; /* Ocupa la mitad del espacio */
+}
+
+.conocenos-title {
+    color: var(--color-precio); /* Usa el rojo de la paleta */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.conocenos-texto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.conocenos-destacado {
+    color: var(--color-precio);
+    font-weight: bold;
+    font-size: 1.1rem !important;
+    margin-top: 20px;
+}
+
+.conocenos-imagen {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+}
+
+.conocenos-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    object-fit: cover;
+    max-height: 400px; /* Altura máxima para que no se desborde */
+}
+
+/* Diseño responsivo para móviles */
+@media (max-width: 768px) {
+    .conocenos-section {
+        flex-direction: column; /* Texto arriba, imagen abajo */
+        gap: 20px;
+    }
+    
+    .conocenos-imagen img {
+        max-height: 300px;
+    }
+}
