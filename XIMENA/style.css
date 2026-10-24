@@ -1,0 +1,466 @@
+/* =========================================
+   VARIABLES Y RESET
+   ========================================= */
+:root {
+    --color-fondo: #f9f9f9;
+    --color-crema: #e8dcc4;
+    --color-marron-claro: #c0a080;
+    --color-marron-oscuro: #5d4037;
+    --color-texto: #333333;
+    --color-rojo-acento: #a52a2a;
+    --fuente-titulos: 'Merriweather', serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+    --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.contenedor-estandar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.cabecera-principal {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.enlace-logo {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-marron-oscuro);
+    font-style: italic;
+}
+
+.zona-interaccion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.buscador-principal {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 5px 15px;
+    background: #fff;
+}
+
+.input-busqueda {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-family: var(--fuente-cuerpo);
+    width: 200px;
+}
+
+.boton-lupa {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.menu-usuario {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+    color: var(--color-marron-oscuro);
+}
+
+.icono-accion { position: relative; transition: color 0.3s; }
+.icono-accion:hover { color: var(--color-rojo-acento); }
+
+.contador-carrito {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-rojo-acento);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* =========================================
+   NAVEGACIÓN
+   ========================================= */
+.navegacion-principal {
+    background-color: var(--color-marron-claro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lista-enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+}
+
+.enlace-nav {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.enlace-nav:hover { opacity: 0.8; }
+
+/* =========================================
+   HERO BANNER (CON IMAGEN REAL)
+   ========================================= */
+.banner-hero {
+    position: relative;
+    height: 400px;
+    /* Imagen real del túnel de libros (Biblioteca de Praga) */
+    background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.capa-superposicion {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4); 
+}
+
+.contenido-hero {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 800px;
+}
+
+.titulo-eslogan {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.subtitulo-hero {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   SECCIÓN RECOMENDACIONES
+   ========================================= */
+.seccion-recomendados {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rojo-acento);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--color-rojo-acento);
+    padding-left: 15px;
+}
+
+.cuadricula-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-libro {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.tarjeta-libro:hover {
+    transform: translateY(-5px);
+}
+
+.marco-imagen {
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 15px;
+    background: #eee;
+    aspect-ratio: 2/3; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marco-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titulo-libro {
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.autor-libro {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.boton-comprar {
+    background-color: var(--color-rojo-acento);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-comprar:hover { background-color: #8b0000; }
+
+/* =========================================
+   SECCIÓN CATÁLOGO (CARRUSEL)
+   ========================================= */
+.seccion-catalogo {
+    padding: 40px 0;
+    background-color: #f4f1ea;
+}
+
+.cabecera-seccion-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.enlace-ver-todo {
+    color: var(--color-rojo-acento);
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.carrusel-horizontal {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+}
+
+.carrusel-horizontal::-webkit-scrollbar { height: 8px; }
+.carrusel-horizontal::-webkit-scrollbar-thumb { background: var(--color-marron-claro); border-radius: 4px; }
+
+.tarjeta-compacta {
+    min-width: 160px;
+    max-width: 160px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.precio-libro {
+    font-weight: bold;
+    color: #444;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.boton-comprar-pequeno {
+    background-color: var(--color-rojo-acento);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   SECCIÓN EXPERIENCIA (CONÓCENOS)
+   ========================================= */
+.seccion-experiencia {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contenedor-doble {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.columna-texto { flex: 1; min-width: 300px; }
+.columna-imagen { flex: 1; min-width: 300px; }
+
+.imagen-libreria {
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px var(--color-crema);
+    width: 100%;
+    height: auto;
+}
+
+.parrafo-descripcion {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+.boton-outline {
+    display: inline-block;
+    border: 2px solid var(--color-marron-oscuro);
+    color: var(--color-marron-oscuro);
+    padding: 10px 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.boton-outline:hover {
+    background-color: var(--color-marron-oscuro);
+    color: white;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.pie-pagina {
+    background-color: var(--color-marron-claro);
+    color: #fff;
+    padding-top: 50px;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    gap: 30px;
+}
+
+.columna-footer { flex: 1; min-width: 250px; }
+
+.titulo-footer {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.subtitulo-footer {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.texto-footer, .texto-footer-pequeno {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.lista-contacto li {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+.redes-sociales a:hover { transform: scale(1.2); }
+
+.lista-enlaces-footer li { margin-bottom: 10px; }
+.lista-enlaces-footer a { font-size: 0.85rem; opacity: 0.8; }
+.lista-enlaces-footer a:hover { opacity: 1; text-decoration: underline; }
+
+.formulario-suscripcion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-footer {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--fuente-cuerpo);
+}
+
+.boton-footer {
+    padding: 10px;
+    background-color: #4a3b32;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.barra-copyright {
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.75rem;
+    margin-top: 20px;
+}
+
