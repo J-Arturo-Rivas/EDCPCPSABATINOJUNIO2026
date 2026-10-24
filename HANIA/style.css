@@ -9,8 +9,8 @@
     --color-cafe-navbar: #b39b7d;
     --color-cafe-footer: #b39b7d;
     --color-cafe-logo: #7a4f2b;
-    --color-rojo-titulos: #7b1c1c; /* Rojo vino para títulos */
-    --color-rojo-botones: #a52020; /* Rojo vino para botones */
+    --color-rojo-titulos: #7b1c1c;
+    --color-rojo-botones: #a52020;
     --color-texto-principal: #333333;
     --color-texto-secundario: #777777;
     --color-gris-borde: #e0e0e0;
@@ -186,7 +186,6 @@ nav ul.menu-principal li a:hover { color: #f0e6d2; }
    ========================================================================== */
 section { margin-bottom: 70px; }
 
-/* Encabezado de la sección para alinear título y botón "Ver más" */
 .encabezado-seccion {
     display: flex;
     justify-content: space-between;
@@ -196,57 +195,43 @@ section { margin-bottom: 70px; }
 
 .titulo-seccion {
     font-family: var(--fuente-titulos);
-    color: var(--color-rojo-titulos); /* Rojo vino */
+    color: var(--color-rojo-titulos);
     font-size: 1.8rem;
     font-weight: 700;
-    text-align: left; /* Alineado a la izquierda */
+    text-align: left;
 }
 
-/* Botón "Ver más" a la derecha */
 .enlace-ver-mas {
+    background: none;
+    border: none;
+    font-family: var(--fuente-cuerpo);
     font-size: 0.9rem;
     color: var(--color-texto-secundario);
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
     transition: color 0.3s;
 }
 
-.enlace-ver-mas:hover {
-    color: var(--color-rojo-titulos);
-}
+.enlace-ver-mas:hover { color: var(--color-rojo-titulos); }
 
-/* ==========================================================================
-   ACTUALIZACIÓN: Contenedor unificado para el Carrusel Horizontal
-   ========================================================================== */
+/* Carrusel Horizontal */
 .carrusel-libros {
-    display: flex; /* Requerido por el checklist */
+    display: flex;
     gap: 25px;
-    overflow-x: auto; /* Scroll horizontal */
+    overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 20px; /* Espacio para la barra de scroll */
+    padding-bottom: 20px;
     scroll-behavior: smooth;
 }
 
-/* Personalización de la barra de scroll (Webkit) */
-.carrusel-libros::-webkit-scrollbar {
-    height: 8px; /* Barra delgada */
-}
+/* Personalización de la barra de scroll */
+.carrusel-libros::-webkit-scrollbar { height: 8px; }
+.carrusel-libros::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.carrusel-libros::-webkit-scrollbar-thumb { background: var(--color-rojo-botones); border-radius: 4px; }
+.carrusel-libros::-webkit-scrollbar-thumb:hover { background: #8b1a1a; }
 
-.carrusel-libros::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Fondo gris claro */
-    border-radius: 4px;
-}
-
-.carrusel-libros::-webkit-scrollbar-thumb {
-    background: var(--color-rojo-botones); /* Color rojo de la tienda */
-    border-radius: 4px;
-}
-
-.carrusel-libros::-webkit-scrollbar-thumb:hover {
-    background: #8b1a1a; /* Rojo más oscuro al pasar el ratón */
-}
-
-/* Tarjetas de libros */
+/* Tarjetas de Libro */
 .tarjeta-libro {
     background: var(--color-blanco);
     padding: 15px;
@@ -254,15 +239,12 @@ section { margin-bottom: 70px; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Sombra suave y bordes redondeados */
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Ancho fijo para las tarjetas en el carrusel */
     min-width: 220px; 
     max-width: 220px;
-    flex: 0 0 auto; /* Evita que se encojan */
+    flex: 0 0 auto;
 }
 
 .tarjeta-libro:hover {
@@ -270,14 +252,22 @@ section { margin-bottom: 70px; }
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Imágenes con altura fija y object-fit: cover */
-.tarjeta-libro img {
-    height: 280px;
+.contenedor-imagen {
     width: 100%;
-    object-fit: cover; /* Asegura que la imagen llene el espacio */
+    height: 280px;
+    overflow: hidden;
     margin-bottom: 15px;
     border-radius: 4px;
 }
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-libro:hover .contenedor-imagen img { transform: scale(1.05); }
 
 .tarjeta-libro h3 {
     font-size: 1rem;
@@ -293,32 +283,36 @@ section { margin-bottom: 70px; }
 }
 
 .tarjeta-libro .precio {
-    font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 15px;
     color: var(--color-texto-principal);
 }
 
-/* Botón "Agregar al carrito" */
+.tarjeta-libro .precio strong { font-weight: 700; }
+
 .tarjeta-libro button {
-    background-color: var(--color-rojo-botones); /* Fondo rojo vino */
-    color: var(--color-blanco); /* Texto blanco */
+    background-color: var(--color-rojo-botones);
+    color: var(--color-blanco);
     border: none;
     padding: 10px 15px;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    width: 100%; /* Ancho del 100% de la tarjeta */
-    border-radius: 25px; /* Bordes redondeados */
+    width: 100%;
+    border-radius: 25px;
     transition: background-color 0.3s;
     margin-top: auto;
 }
 
-.tarjeta-libro button:hover {
-    background-color: #8b1a1a;
-}
+.tarjeta-libro button:hover { background-color: #8b1a1a; }
 
+.tarjeta-libro button.agotado {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
 /* ==========================================================================
    6. SECCIÓN CONÓCENOS
    ========================================================================== */
@@ -448,7 +442,134 @@ footer {
 }
 
 /* ==========================================================================
-   8. DISEÑO RESPONSIVO
+   8. MODAL DEL CARRITO
+   ========================================================================== */
+.modal-fondo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-fondo.activo { display: flex; }
+
+.modal-contenido {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-contenido h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-cafe-logo);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-gris-borde);
+    padding-bottom: 10px;
+}
+
+.boton-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.boton-cerrar:hover { color: var(--color-rojo-botones); }
+
+.lista-carrito {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    padding: 40px 0;
+    font-style: italic;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-gris-borde);
+}
+
+.item-carrito-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-carrito-info strong { font-size: 1rem; }
+.item-carrito-info span { font-size: 0.85rem; color: var(--color-texto-secundario); }
+
+.resumen-carrito {
+    text-align: right;
+    font-size: 1.2rem;
+    border-top: 2px solid var(--color-gris-borde);
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.acciones-carrito {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.boton-vaciar {
+    background-color: transparent;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-gris-borde);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.boton-vaciar:hover:not(:disabled) { background-color: #f1f1f1; }
+
+.boton-pagar {
+    background-color: var(--color-rojo-botones);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-pagar:hover:not(:disabled) { background-color: #8b1a1a; }
+
+.boton-vaciar:disabled,
+.boton-pagar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   9. DISEÑO RESPONSIVO
    ========================================================================== */
 @media (max-width: 900px) {
     .seccion-conocenos { flex-direction: column; }
@@ -457,7 +578,7 @@ footer {
 
 @media (max-width: 768px) {
     header .contenedor { flex-direction: column; gap: 15px; }
-    header .formulario-busqueda { width: 100%; } 
+    header .formulario-busqueda { width: 100%; }
     nav ul.menu-principal { flex-wrap: wrap; gap: 15px; }
     .seccion-banner h1 { font-size: 2rem; }
 }
