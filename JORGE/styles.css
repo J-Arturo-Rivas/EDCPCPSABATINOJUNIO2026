@@ -156,14 +156,21 @@ nav a:hover {
     color: white;
 }
 
-/* Grid de Libros */
+/* Grid de Libros con Scroll Horizontal */
 .books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 30px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Desplazamiento lateral */
+    overflow-y: hidden; /* Sin scroll vertical */
+    padding-bottom: 20px; /* Espacio para la barra */
+    scroll-snap-type: x mandatory; /* Ajuste magnético al hacer scroll */
 }
 
+/* Tarjetas de libros adaptadas al flex */
 .book-card {
+    min-width: 220px;
+    max-width: 220px;
+    scroll-snap-align: start;
     background: var(--blanco);
     padding: 15px;
     border-radius: 8px;
@@ -228,9 +235,29 @@ nav a:hover {
     cursor: not-allowed;
 }
 
-/* Paginación */
+/* --- PERSONALIZACIÓN DE LA BARRA DE SCROLL --- */
+.books-grid::-webkit-scrollbar {
+    height: 10px;
+}
+
+.books-grid::-webkit-scrollbar-track {
+    background: #e0e0e0; 
+    border-radius: 10px;
+}
+
+.books-grid::-webkit-scrollbar-thumb {
+    background: var(--color-precio); 
+    border-radius: 10px;
+    border: 2px solid #e0e0e0; 
+}
+
+.books-grid::-webkit-scrollbar-thumb:hover {
+    background: #a93226; 
+}
+
+/* Paginación (Oculta, pero se mantiene por si se necesita) */
 .pagination {
-    display: flex;
+    display: none; /* Oculto porque usamos scroll */
     justify-content: center;
     margin-top: 40px;
     gap: 10px;
@@ -249,9 +276,55 @@ nav a:hover {
     color: white;
 }
 
+/* --- SECCIÓN CONÓCENOS --- */
+.conocenos-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.conocenos-texto {
+    flex: 1;
+}
+
+.conocenos-title {
+    color: var(--color-precio);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.conocenos-texto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.conocenos-destacado {
+    color: var(--color-precio);
+    font-weight: bold;
+    font-size: 1.1rem !important;
+    margin-top: 20px;
+}
+
+.conocenos-imagen {
+    flex: 1;
+}
+
+.conocenos-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    object-fit: cover;
+    max-height: 400px;
+}
+
 /* --- MODAL DEL CARRITO --- */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -287,14 +360,26 @@ nav a:hover {
 
 .cart-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Centra verticalmente imagen y texto */
     border-bottom: 1px solid #eee;
-    padding: 10px 0;
+    padding: 15px 0; /* Un poco más de espacio */
+    gap: 15px; /* Espacio entre la imagen y el texto */
 }
 
+/* NUEVA CLASE: Estilo para la miniatura de la imagen */
+.cart-item-img {
+    width: 50px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ajuste a la información para que ocupe el espacio disponible */
 .cart-item-info {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-item-title {
@@ -393,66 +478,15 @@ footer ul li {
     font-size: 1.5rem;
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     header { flex-direction: column; gap: 10px; }
     .search-bar { width: 100%; }
     .hero h1 { font-size: 1.8rem; }
     .modal-content { width: 95%; }
-}
-/* ========================================== */
-/* ESTILOS PARA LA SECCIÓN CONÓCENOS          */
-/* ========================================== */
-
-.conocenos-section {
-    display: flex;
-    align-items: center; /* Centra verticalmente texto e imagen */
-    gap: 40px; /* Espacio entre texto e imagen */
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid #ddd; /* Línea sutil de separación */
-}
-
-.conocenos-texto {
-    flex: 1; /* Ocupa la mitad del espacio */
-}
-
-.conocenos-title {
-    color: var(--color-precio); /* Usa el rojo de la paleta */
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.conocenos-texto p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 15px;
-}
-
-.conocenos-destacado {
-    color: var(--color-precio);
-    font-weight: bold;
-    font-size: 1.1rem !important;
-    margin-top: 20px;
-}
-
-.conocenos-imagen {
-    flex: 1; /* Ocupa la otra mitad del espacio */
-}
-
-.conocenos-imagen img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    object-fit: cover;
-    max-height: 400px; /* Altura máxima para que no se desborde */
-}
-
-/* Diseño responsivo para móviles */
-@media (max-width: 768px) {
+    
     .conocenos-section {
-        flex-direction: column; /* Texto arriba, imagen abajo */
+        flex-direction: column;
         gap: 20px;
     }
     
