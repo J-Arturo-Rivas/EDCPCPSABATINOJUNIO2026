@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Túnel - Librería</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="contenedor">
+            <a href="#" class="logo">El Túnel</a>
+            
+            <!-- ACTUALIZACIÓN: Formulario de búsqueda -->
+            <form action="#" method="GET" class="formulario-busqueda">
+                <input type="text" name="q" placeholder="Buscar..." required>
+                <!-- ACTUALIZACIÓN: Botón de la lupa -->
+                <button type="submit" class="boton-buscar">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="Buscar">
+                </button>
+            </form>
+
+            <div class="iconos-usuario">
+                <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Favoritos"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png" alt="Carrito"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="Perfil"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="contenedor">
+            <ul class="menu-principal">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Libros</a></li>
+                <li><a href="#">Los más leídos</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Sucursal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+        
+        <!-- Banner Principal -->
+        <section class="seccion-banner">
+            <div class="texto-banner">
+                <h1>...Creando nuevos mundos, historias y recuerdos</h1>
+                <p>"Vive conmigo, sé consciente de nuestros recuerdos"</p>
+            </div>
+        </section>
+
+        <div class="contenedor">
+            <!-- Sección 1: Recomendaciones -->
+            <section>
+                <h2 class="titulo-seccion">Recomendaciones</h2>
+                <div class="grid-libros">
+                    <!-- Libro 1 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/N5nMu5i4oFZ_BzQ-BGxNxMuRBukB8CkfLIFJcc0gvLs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y3VldmFuYTNzLmJl/c3QvdW5zYWZlL3Jz/OmZpdDozNjAvcTo3/MC9wbGFpbi90bWRi/L3QvcC93NTAwLy93/dU1jMDhJUEtFYXRm/OXJuTU5YdklEeHFQ/NFcuanBn" alt="Harry Potter"></a>
+                        <h3>Harry Potter y la piedra</h3>
+                        <p class="autor-libro">J.K. Rowling</p>
+                        <button>Ver más</button>
+                    </div>
+                    <!-- Libro 2 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/Ex5scjS31K7p2CSh_gZ1Wps_u81Rw6rzEB4Aj-Me6Ug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxOGdvTk9CU1VM/LmpwZw" alt="Cien años de soledad"></a>
+                        <h3>Cien años de soledad</h3>
+                        <p class="autor-libro">Gabriel García Márquez</p>
+                        <button>Ver más</button>
+                    </div>
+                    <!-- Libro 3 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/3WBSkRcL2-kjZx4uSxa3W_mnon8HoFGX_yYw2DY0gRI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nLzN4VUFB/ZVN3OXpkcGgwcjEv/cy1sNTAwLmpwZw" alt="La insoportable levedad del ser"></a>
+                        <h3>La insoportable levedad del ser</h3>
+                        <p class="autor-libro">Milan Kundera</p>
+                        <button>Ver más</button>
+                    </div>
+                    <!-- Libro 4 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/Y_1zs9kRoNkOIxPdq-Lw8JeJrdizNA9Sw2DusmXGFXA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW5k/dWxvLmNvbS9pbWFn/ZW5lcy85NzgwMzg1/Lzk3ODAzODU3MjEy/My5HSUY.gif" alt="Como agua para chocolate"></a>
+                        <h3>Como agua para chocolate</h3>
+                        <p class="autor-libro">Laura Esquivel</p>
+                        <button>Ver más</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Libros -->
+            <section>
+                <h2 class="titulo-seccion">Libros</h2>
+                <div class="grid-libros">
+                    <!-- Libro 5 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/wC4eqV3hV0vJmVTmINMN-UmW9V89hvv1FHg88GSmBdU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEzZU14d2hDZEwu/anBn" alt="Fuerte es el silencio"></a>
+                        <h3>Fuerte es el silencio</h3>
+                        <p class="autor-libro">Elena Poniatowska</p>
+                        <p class="precio">$450.00</p>
+                        <button>Comprar</button>
+                    </div>
+                    <!-- Libro 6 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/u3-qi6cGMpI0aE9p_xD_X_6fcqF4TDm3M1SvX5j63BM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDYuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvMDYvOTc4/ODQ2NjMzMTkwNi53/ZWJw" alt="Rayuela"></a>
+                        <h3>Rayuela</h3>
+                        <p class="autor-libro">Julio Cortázar</p>
+                        <p class="precio">$445.00</p>
+                        <button>Comprar</button>
+                    </div>
+                    <!-- Libro 7 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/cg7TB13D0ihT6yzRCnDYWUOjGiHKkMPnda1cj_IolKI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmZpbG1hZmZpbml0/eS5jb20vbGFfbGV5/X2RlX2hlcm9kZXMt/MTQyMzczMjIwLW1t/ZWQuanBn" alt="La ley de los héroes"></a>
+                        <h3>La ley de los herodes</h3>
+                        <p class="autor-libro">Jorge Ibargüengoitia</p>
+                        <p class="precio">$150.00</p>
+                        <button>Comprar</button>
+                    </div>
+                    <!-- Libro 8 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/ANALI1ejVLL9sGSrEeJJHB_jk-1hS1f2ad0hU_H6tSo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waWNz/LmZpbG1hZmZpbml0/eS5jb20vYXJyYW5j/YW1lX2xhX3ZpZGFf/dGVhcl90aGlzX2hl/YXJ0X291dC00MzA3/ODk4NzgtbW1lZC5q/cGc" alt="Arráncame la vida"></a>
+                        <h3>Arráncame la vida</h3>
+                        <p class="autor-libro">Ángeles Mastretta</p>
+                        <p class="precio">$350.00</p>
+                        <button>Comprar</button>
+                    </div>
+                    <!-- Libro 9 -->
+                    <div class="tarjeta-libro">
+                        <a href="#"><img src="https://imgs.search.brave.com/E2jXWTlBzDMsSFp-SCKCHpifkKk6jsLutglpOwE0j9o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW5k/dWxvLmNvbS9pbWFn/ZW5lcy85Nzg4NDkx/Lzk3ODg0OTEwNTgz/My5HSUY.gif" alt="Una habitación propia"></a>
+                        <h3>Una habitación propia</h3>
+                        <p class="autor-libro">Virginia Woolf</p>
+                        <p class="precio">$240.00</p>
+                        <button>Comprar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Conócenos -->
+            <section class="seccion-conocenos">
+                <div class="conocenos-texto">
+                    <h2>Conócenos</h2>
+                    <p>El Túnel es una cafetería ideal para los amantes de la literatura.</p>
+                    <p>Además de su servicio de venta de libros y productos en línea puedes visitar nuestra sucursal y disfrutar de un café de altura, en un espacio acogedor, e incluso, ser testigo de los diversos eventos culturales que tenemos para ti.</p>
+                    <p>Síguenos en redes sociales y mantente atento a la cartelera de eventos.</p>
+                    <p><strong>¡Te esperamos!</strong></p>
+                </div>
+                <div class="conocenos-imagen">
+                    <a href="#"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop" alt="Interior de la librería"></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="contenedor">
+            <div class="footer-grid">
+                <section class="footer-col">
+                    <h4>El Túnel</h4>
+                    <p>Un espacio para los amantes de la literatura. Encuentra la magia a través de nuestros libros.</p>
+                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/marker--v1.png" alt="Ubicación" class="icono-footer">Av. Álvaro Obregón 99, Roma Norte, Cuauhtémoc, 06700 CDMX</p>
+                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png" alt="Teléfono" class="icono-footer">+52 55 58 27 87 67</p>
+                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email" class="icono-footer">hola@eltunel.com.mx</p>
+                    <div class="redes-sociales">
+                        <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/facebook-new.png" alt="Facebook"></a>
+                        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png" alt="Instagram"></a>
+                        <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png" alt="Twitter"></a>
+                        <a href="https://youtube.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/youtube-play.png" alt="YouTube"></a>
+                    </div>
+                </section>
+
+                <section class="footer-col">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de El Túnel</a></li>
+                        <li><a href="#">Sucursales</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Facturación</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-col suscripcion">
+                    <h4>Suscríbete</h4>
+                    <p>Recibirás noticias de promociones, eventos y novedades literarias.</p>
+                    <input type="email" placeholder="Ingresa tu email">
+                    <button>Enviar</button>
+                </section>
+            </div>
+
+            <div class="pie-derechos">
+                <p>2024 © El Túnel. Todos los Derechos Reservados. | Diseñado por Escuela de Código ADIP.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
