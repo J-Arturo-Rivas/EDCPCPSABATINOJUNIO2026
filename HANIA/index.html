@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Túnel - Librería</title>
+    <!-- Enlace a tu hoja de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,124 +53,142 @@
         </section>
 
         <div class="contenedor">
-            <!-- Sección 1: Recomendaciones (ACTUALIZADA a Carrusel) -->
+            <!-- Sección 1: Recomendaciones -->
             <section>
                 <div class="encabezado-seccion">
                     <h2 class="titulo-seccion">Recomendaciones</h2>
-                    <!-- Se puede omitir el "Ver más" aquí si no lo deseas, pero lo dejo por consistencia -->
-                    <a href="#" class="enlace-ver-mas">Ver más</a>
                 </div>
                 
-                <!-- Cambiado de .grid-libros a .carrusel-libros -->
                 <div class="carrusel-libros">
-                    <div class="tarjeta-libro">
-                        <a href="#">
-                        <img src="harry-potter.jpg" alt="Harry Potter y la piedra">
-                    </a>
+                    <!-- Libro 1 -->
+                    <div class="tarjeta-libro" data-id="lib-001" data-stock="5">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="harry-potter.jpg" alt="Harry Potter y la piedra"></a>
+                        </div>
                         <h3>Harry Potter y la piedra</h3>
                         <p class="autor-libro">J.K. Rowling</p>
-                        <button>Agregar al carrito</button>
+                        <p class="precio"><strong>$350.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                         <a href="#">
-                        <img src="cien-anos.jpg" alt="Cien años de soledad">
-                    </a>
+
+                    <!-- Libro 2 -->
+                    <div class="tarjeta-libro" data-id="lib-002" data-stock="3">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="cien-anos.jpg" alt="Cien años de soledad"></a>
+                        </div>
                         <h3>Cien años de soledad</h3>
                         <p class="autor-libro">Gabriel García Márquez</p>
-                        <button>Agregar al carrito</button>
+                        <p class="precio"><strong>$420.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                        <a href="#">
-                        <img src="insoportable.jpg" alt="La insoportable levedad del ser">
-                    </a>
+
+                    <!-- Libro 3 (Sin stock para probar) -->
+                    <div class="tarjeta-libro" data-id="lib-003" data-stock="0">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="insoportable.jpg" alt="La insoportable levedad del ser"></a>
+                        </div>
                         <h3>La insoportable levedad del ser</h3>
                         <p class="autor-libro">Milan Kundera</p>
-                        <button>Agregar al carrito</button>
+                        <p class="precio"><strong>$380.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                         <a href="#">
-                        <img src="como-agua.jpg" alt="Como agua para chocolate">
-                    </a>
+
+                    <!-- Libro 4 -->
+                    <div class="tarjeta-libro" data-id="lib-004" data-stock="8">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="como-agua.jpg" alt="Como agua para chocolate"></a>
+                        </div>
                         <h3>Como agua para chocolate</h3>
                         <p class="autor-libro">Laura Esquivel</p>
-                        <button>Agregar al carrito</button>
-                    </div>
-                    <!-- Libro extra para forzar el scroll en Recomendaciones -->
-                    <div class="tarjeta-libro">
-                         <a href="#">
-                        <img src="fuerte-es-el-silencio.jpg" alt="Fuerte es el silencio">
-                    </a>
-                        <h3>Una habitación propia</h3>
-                        <p class="autor-libro">Virginia Woolf</p>
-                        <button>Agregar al carrito</button>
-                    </div>
-                  <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/NDetHJzSItOtHdE8BfkONMwaOziLMVDU_N-SBqp0zeE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9xdWVs/aWJyb2xlby5jb20v/aW1hZ2VzL2xpYnJv/cy9saWJyby0xNTkx/MDIxNjIwLmpwZw" alt="El señor de las moscas"></a>
-                        <h3>El señor de las moscas</h3>
-                        <p class="autor-libro">William Golding</p>
-                        <button>Agregar al carrito</button>
+                        <p class="precio"><strong>$290.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Sección 2: Libros (Carrusel Horizontal) -->
+            <!-- Sección 2: Libros -->
             <section>
                 <div class="encabezado-seccion">
                     <h2 class="titulo-seccion">Libros</h2>
-                    <a href="#" class="enlace-ver-mas">Ver más</a>
+                    <!-- Botón "Ver más" con ID para JS -->
+                    <button id="btn-ver-mas" class="enlace-ver-mas">Ver más</button>
                 </div>
                 
-                <div class="carrusel-libros">
-                    <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/mzfX8ZyNyujPeuWIhb5xKdH8Dq2zCQgZoQ2WRA4iMPk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zY2hh/dmVsem9uZ3JhaGFt/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS8wOS9wb25p/YXRvd3NrYV9mdWVy/dGVfZXNfZWxfc2ls/ZW5jaW9fcGxhbmV0/YV93ZWJfMS5qcGc" alt="Fuerte es el silencio"></a>
+                <div class="carrusel-libros" id="carrusel-principal">
+                    <!-- Libro 5 -->
+                    <div class="tarjeta-libro" data-id="lib-006" data-stock="4">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="fuerte-es-el-silencio.jpg" alt="Fuerte es el silencio"></a>
+                        </div>
                         <h3>Fuerte es el silencio</h3>
                         <p class="autor-libro">Elena Poniatowska</p>
-                        <p class="precio">$450.00</p>
-                        <button>Comprar</button>
+                        <p class="precio"><strong>$450.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                         <a href="#">
-                        <img src="rayuela.jpg" alt="Rayuela">
-                    </a>
+
+                    <!-- Libro 6 -->
+                    <div class="tarjeta-libro" data-id="lib-007" data-stock="6">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="rayuela.jpg" alt="Rayuela"></a>
+                        </div>
                         <h3>Rayuela</h3>
                         <p class="autor-libro">Julio Cortázar</p>
-                        <p class="precio">$445.00</p>
-                        <button>Comprar</button>
+                        <p class="precio"><strong>$445.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                        <a href="#">
-                        <img src="ley-de-heroes.jpg" alt="La ley de los héroes">
-                    </a>
+
+                    <!-- Libro 7 -->
+                    <div class="tarjeta-libro" data-id="lib-008" data-stock="1">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="ley-de-heroes.jpg" alt="La ley de los héroes"></a>
+                        </div>
                         <h3>La ley de los héroes</h3>
                         <p class="autor-libro">Jorge Ibargüengoitia</p>
-                        <p class="precio">$150.00</p>
-                        <button>Comprar</button>
+                        <p class="precio"><strong>$150.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                         <a href="#">
-                        <img src="arrancame-la-vida.jpg" alt="Arráncame la vida">
-                    </a>
+
+                    <!-- Libro 8 (Sin stock para probar) -->
+                    <div class="tarjeta-libro" data-id="lib-009" data-stock="0">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="arrancame-la-vida.jpg" alt="Arráncame la vida"></a>
+                        </div>
                         <h3>Arráncame la vida</h3>
                         <p class="autor-libro">Ángeles Mastretta</p>
-                        <p class="precio">$350.00</p>
-                        <button>Comprar</button>
+                        <p class="precio"><strong>$350.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <div class="tarjeta-libro">
-                        <a href="#">
-                        <img src="una-habitacion.jpg" alt="Una habitación propia">
-                    </a>
+
+                    <!-- Libro 9 -->
+                    <div class="tarjeta-libro" data-id="lib-010" data-stock="7">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="una-habitacion.jpg" alt="Una habitación propia"></a>
+                        </div>
                         <h3>Una habitación propia</h3>
                         <p class="autor-libro">Virginia Woolf</p>
-                        <p class="precio">$240.00</p>
-                        <button>Comprar</button>
+                        <p class="precio"><strong>$240.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
-                    <!-- Libro extra para forzar el scroll en Libros -->
-                    <div class="tarjeta-libro">
-                        <a href="#"><img src="https://imgs.search.brave.com/cqf3YW87iP2CQuDy16PWhBSkRBz95P-34wnaUyNUNUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zczM2/NS5saXZlcnBvb2wu/Y29tLm14L3hsLzEx/OTA0MjI2MDMuanBn" alt="Las Batallas en el Desierto"></a>
+
+                    <!-- Libros Ocultos (aparecen al dar clic en Ver más) -->
+                    <div class="tarjeta-libro libro-oculto" data-id="lib-011" data-stock="3" style="display: none;">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="https://imgs.search.brave.com/cqf3YW87iP2CQuDy16PWhBSkRBz95P-34wnaUyNUNUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zczM2/NS5saXZlcnBvb2wu/Y29tLm14L3hsLzEx/OTA0MjI2MDMuanBn" alt="Las Batallas en el Desierto"></a>
+                        </div>
                         <h3>Las Batallas en el Desierto</h3>
-                        <p class="autor-libro">Autor de Prueba</p>
-                        <p class="precio">$300.00</p>
-                        <button>Comprar</button>
+                        <p class="autor-libro">José Emilio Pacheco</p>
+                        <p class="precio"><strong>$300.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
+                    </div>
+                    
+                    <div class="tarjeta-libro libro-oculto" data-id="lib-012" data-stock="5" style="display: none;">
+                        <div class="contenedor-imagen">
+                            <a href="#"><img src="harry-potter.jpg" alt="Libro Extra 2"></a>
+                        </div>
+                        <h3>Libro Extra 2</h3>
+                        <p class="autor-libro">Autor Extra</p>
+                        <p class="precio"><strong>$200.00</strong></p>
+                        <button class="boton-agregar">Agregar al carrito</button>
                     </div>
                 </div>
             </section>
@@ -235,5 +254,56 @@
         </div>
     </footer>
 
+    <!-- ================= SCRIPT JS INTEGRADO ================= -->
+    <script>
+        // Esperamos a que el documento HTML cargue completamente
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. LÓGICA DE STOCK (Simulación) ---
+            // Buscamos todas las tarjetas de libros
+            const tarjetas = document.querySelectorAll('.tarjeta-libro');
+
+            tarjetas.forEach(tarjeta => {
+                const stock = parseInt(tarjeta.getAttribute('data-stock'));
+                const boton = tarjeta.querySelector('.boton-agregar');
+
+                if (stock === 0) {
+                    // Si no hay stock, cambiamos el botón
+                    boton.textContent = 'Agotado';
+                    boton.classList.add('agotado');
+                    boton.disabled = true;
+                } else {
+                    // Si hay stock, le agregamos la función de alerta al hacer clic
+                    boton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const titulo = tarjeta.querySelector('h3').textContent;
+                        alert('✅ ¡Has agregado "' + titulo + '" al carrito!');
+                    });
+                }
+            });
+
+            // --- 2. LÓGICA DE "VER MÁS" ---
+            const btnVerMas = document.getElementById('btn-ver-mas');
+            const librosOcultos = document.querySelectorAll('.libro-oculto');
+            let mostrandoExtra = false;
+
+            if (btnVerMas) {
+                btnVerMas.addEventListener('click', function() {
+                    librosOcultos.forEach(libro => {
+                        if (!mostrandoExtra) {
+                            libro.style.display = 'flex'; // Mostrar libros
+                        } else {
+                            libro.style.display = 'none'; // Ocultar libros
+                        }
+                    });
+
+                    // Cambiamos el estado y el texto del botón
+                    mostrandoExtra = !mostrandoExtra;
+                    btnVerMas.textContent = mostrandoExtra ? 'Ver menos' : 'Ver más';
+                });
+            }
+
+        });
+    </script>
 </body>
 </html>
