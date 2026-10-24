@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Túnel | Librería y Experiencias</title>
-    <!-- Enlace al archivo de estilos externo -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fuentes de Google (Tipografía Serif para el logo y Sans para el cuerpo) -->
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Iconos (usando FontAwesome para redes y carrito) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -31,9 +28,10 @@
                 <nav class="menu-usuario" aria-label="Menú de usuario">
                     <a href="/deseos" class="icono-accion" title="Lista de deseos"><i class="fa-regular fa-heart"></i></a>
                     <a href="/perfil" class="icono-accion" title="Mi cuenta"><i class="fa-regular fa-user"></i></a>
-                    <a href="/carrito" class="icono-accion carrito-destacado" title="Carrito de compras">
+                    <!-- ID AÑADIDO AQUÍ PARA EL EVENTO CLICK -->
+                    <a href="#" class="icono-accion carrito-destacado" id="btn-abrir-carrito" title="Carrito de compras">
                         <i class="fa-solid fa-bag-shopping"></i>
-                        <span class="contador-carrito">0</span>
+                        <span class="contador-carrito" id="contador-carrito">0</span>
                     </a>
                 </nav>
             </div>
@@ -51,9 +49,8 @@
         </ul>
     </nav>
 
-    <!-- BLOQUE: Hero Banner (Portada) -->
+    <!-- BLOQUE: Hero Banner -->
     <section class="banner-hero" id="seccion-hero">
-        <!-- Imagen de fondo: Estantería de madera con libros (Unsplash) -->
         <div class="capa-superposicion"></div>
         <div class="contenido-hero">
             <h1 class="titulo-eslogan">...Creando nuevos mundos, historias y recuerdos</h1>
@@ -64,55 +61,62 @@
     <!-- BLOQUE: Recomendaciones -->
     <section class="seccion-recomendados" id="recomendaciones">
         <div class="contenedor-estandar">
-            <h2 class="titulo-seccion">Recomendaciones</h2>
+            <div class="cabecera-seccion-flex">
+                <h2 class="titulo-seccion">Recomendaciones</h2>
+                <a href="#" class="enlace-ver-todo" id="btn-ver-mas-recomendados">Ver más</a>
+            </div>
             
-            <div class="cuadricula-libros">
-                <!-- Tarjeta 1: Harry Potter -->
+            <div class="carrusel-horizontal">
+                <!-- Tarjeta 1 -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <!-- Imagen real de portada de libro (Unsplash) -->
-                        <img src="https://imgs.search.brave.com/TsXBzxAmbt8HW9u1bw8O1ZYEVbsnFfBLOxj4yh_Wxm0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGliY2llbnRpZmlj/YS5jb20vaW1hZ2Vu/ZXMvOTc4ODQ5OC85/Nzg4NDk4Mzg5NDgu/R0lG.gif">
+                        <img src="https://imgs.search.brave.com/TsXBzxAmbt8HW9u1bw8O1ZYEVbsnFfBLOxj4yh_Wxm0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGliY2llbnRpZmlj/YS5jb20vaW1hZ2Vu/ZXMvOTc4ODQ5OC85/Nzg4NDk4Mzg5NDgu/R0lG.gif" alt="Harry Potter">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">Harry Potter y la piedra filosofal</h3>
                         <p class="autor-libro">J.K. Rowling</p>
-                        <button class="boton-comprar">VER MÁS</button>
+                        <p class="precio-libro"><strong>$350.00</strong></p>
+                        <!-- Atributos data añadidos para el carrito -->
+                        <button class="boton-comprar btn-agregar-carrito" id="btn-add-1" data-id="lib-001" data-nombre="Harry Potter y la piedra filosofal" data-precio="350.00">Agregar al carrito</button>
                     </div>
                 </article>
 
-                <!-- Tarjeta 2: Cien Años de Soledad -->
+                <!-- Tarjeta 2 -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/R4NDXAeNjP8mql0RNQiuB4Z4xOnCLaRYDMoaiklQU1U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuY2VnYWwuZXMv/aW1hZ2VuZXMvbWFy/Y2FkYXMvOTc4ODQ5/Ny85Nzg4NDk3NTky/MjAuZ2lm.gif">
+                        <img src="https://imgs.search.brave.com/R4NDXAeNjP8mql0RNQiuB4Z4xOnCLaRYDMoaiklQU1U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuY2VnYWwuZXMv/aW1hZ2VuZXMvbWFy/Y2FkYXMvOTc4ODQ5/Ny85Nzg4NDk3NTky/MjAuZ2lm.gif" alt="Cien años de soledad">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">Cien años de soledad</h3>
                         <p class="autor-libro">Gabriel García Márquez</p>
-                        <button class="boton-comprar">VER MÁS</button>
+                        <p class="precio-libro"><strong>$420.00</strong></p>
+                        <button class="boton-comprar btn-agregar-carrito" id="btn-add-2" data-id="lib-002" data-nombre="Cien años de soledad" data-precio="420.00">Agregar al carrito</button>
                     </div>
                 </article>
 
-                <!-- Tarjeta 3: La Insoportable Levedad -->
+                <!-- Tarjeta 3 -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/uUR-V2KcGbRBhrqu5UX6ZtfHG2ImPfpSn-0MApoV3Lo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93bWFn/YXppbi5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDYv/RWxsaWJyb3F1ZXJl/Z2FsYXJpYW5sb3Ns/aWJyZXJvcy1MbG9y/ZW5zLUxhaW5zb3Bv/cnRhYmxlbGV2ZWRh/ZGRlbHNlci1LdW5k/ZXJhLXBvcnRhZGEt/V01hZ2F6aW4tNjYy/eDEwMjQuanBn">
+                        <img src="https://imgs.search.brave.com/uUR-V2KcGbRBhrqu5UX6ZtfHG2ImPfpSn-0MApoV3Lo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93bWFn/YXppbi5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDYv/RWxsaWJyb3F1ZXJl/Z2FsYXJpYW5sb3Ns/aWJyZXJvcy1MbG9y/ZW5zLUxhaW5zb3Bv/cnRhYmxlbGV2ZWRh/ZGRlbHNlci1LdW5k/ZXJhLXBvcnRhZGEt/V01hZ2F6aW4tNjYy/eDEwMjQuanBn" alt="La insoportable levedad">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">La insoportable levedad</h3>
                         <p class="autor-libro">Milan Kundera</p>
-                        <button class="boton-comprar">VER MÁS</button>
+                        <p class="precio-libro"><strong>$290.00</strong></p>
+                        <button class="boton-comprar btn-agregar-carrito" id="btn-add-3" data-id="lib-003" data-nombre="La insoportable levedad" data-precio="290.00">Agregar al carrito</button>
                     </div>
                 </article>
 
-                <!-- Tarjeta 4: Como Agua para Chocolate -->
+                <!-- Tarjeta 4 -->
                 <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/h5UY8MWjO3Bf91U1uZCdDh9pLhla42lTKbF6W_SV0yM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52b2d1ZS5teC9w/aG90b3MvNjUxMGJi/YzY1YTdlMTVmOWVl/ZjMwZDEzL21hc3Rl/ci93XzE2MDAsY19s/aW1pdC9jb21vLWFn/dWEtcGFyYS1jaG9j/b2xhdGUtbGlicm8t/bGF1cmEtZXNxdWl2/ZWwuanBn">
+                        <img src="https://imgs.search.brave.com/h5UY8MWjO3Bf91U1uZCdDh9pLhla42lTKbF6W_SV0yM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS52b2d1ZS5teC9w/aG90b3MvNjUxMGJi/YzY1YTdlMTVmOWVl/ZjMwZDEzL21hc3Rl/ci93XzE2MDAsY19s/aW1pdC9jb21vLWFn/dWEtcGFyYS1jaG9j/b2xhdGUtbGlicm8t/bGF1cmEtZXNxdWl2/ZWwuanBn" alt="Como agua para chocolate">
                     </div>
                     <div class="info-libro">
                         <h3 class="titulo-libro">Como agua para chocolate</h3>
                         <p class="autor-libro">Laura Esquivel</p>
-                        <button class="boton-comprar">VER MÁS</button>
+                        <p class="precio-libro"><strong>$310.00</strong></p>
+                        <button class="boton-comprar btn-agregar-carrito" id="btn-add-4" data-id="lib-004" data-nombre="Como agua para chocolate" data-precio="310.00">Agregar al carrito</button>
                     </div>
                 </article>
             </div>
@@ -124,66 +128,179 @@
         <div class="contenedor-estandar">
             <div class="cabecera-seccion-flex">
                 <h2 class="titulo-seccion">Libros</h2>
-                <a href="/todos" class="enlace-ver-todo">Ver más</a>
+                <a href="#" class="enlace-ver-todo" id="btn-ver-mas-libros">Ver más</a>
             </div>
 
-            <div class="carrusel-horizontal">
-                
-                <!-- Item 1 -->
-                <article class="tarjeta-libro tarjeta-compacta">
+            <div class="carrusel-horizontal" id="lista-libros">
+               
+               <!-- Item 1 -->
+                <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/6u9SLoAeqPyOGiBsAJFiYJP9oeKlwHbefpyOk3Rv03U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2FuZG9ybWFyYWku/Y29tL2ltYWdlbmVz/Lzk3ODYwNzMvOTc4/NjA3MzkwNDY1Lndl/YnA">
+                        <img src="https://imgs.search.brave.com/6u9SLoAeqPyOGiBsAJFiYJP9oeKlwHbefpyOk3Rv03U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2FuZG9ybWFyYWku/Y29tL2ltYWdlbmVz/Lzk3ODYwNzMvOTc4/NjA3MzkwNDY1Lndl/YnA" alt="Fuertes es el silencio">
                     </div>
                     <h3 class="titulo-libro">Fuertes es el silencio</h3>
-                    <p class="precio-libro">$450.00</p>
-                    <button class="boton-comprar-pequeno">COMPRAR</button>
+                    <p class="autor-libro">Varios Autores</p>
+                    <p class="precio-libro"><strong>$450.00</strong></p>
+                    <button class="boton-comprar btn-agregar-carrito" id="btn-add-5" data-id="lib-005" data-nombre="Fuertes es el silencio" data-precio="450.00">Agregar al carrito</button>
                 </article>
 
                 <!-- Item 2 -->
-                <article class="tarjeta-libro tarjeta-compacta">
+                <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/8FwySAjfISlD_3ZvxFkcFUUSYMbemii2G177PG3nHrc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDcuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvNDcvOTc4/ODQzNzYyNDc0Ny53/ZWJw">
+                        <img src="https://imgs.search.brave.com/8FwySAjfISlD_3ZvxFkcFUUSYMbemii2G177PG3nHrc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDcuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvNDcvOTc4/ODQzNzYyNDc0Ny53/ZWJw" alt="Rayuela">
                     </div>
                     <h3 class="titulo-libro">Rayuela</h3>
-                    <p class="precio-libro">$445.00</p>
-                    <button class="boton-comprar-pequeno">COMPRAR</button>
+                    <p class="autor-libro">Julio Cortázar</p>
+                    <p class="precio-libro"><strong>$445.00</strong></p>
+                    <button class="boton-comprar btn-agregar-carrito" id="btn-add-6" data-id="lib-006" data-nombre="Rayuela" data-precio="445.00">Agregar al carrito</button>
                 </article>
 
                 <!-- Item 3 -->
-                <article class="tarjeta-libro tarjeta-compacta">
+                <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/dsDThgq0dUGJ1T8pPN0onPvuMCYrJNEJgLj4XcbZNt4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF3YUhyamt5dUwu/anBn">
+                        <img src="https://imgs.search.brave.com/dsDThgq0dUGJ1T8pPN0onPvuMCYrJNEJgLj4XcbZNt4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF3YUhyamt5dUwu/anBn" alt="La ley de Herodes">
                     </div>
                     <h3 class="titulo-libro">La ley de Herodes</h3>
-                    <p class="precio-libro">$150.00</p>
-                    <button class="boton-comprar-pequeno">COMPRAR</button>
+                    <p class="autor-libro">Jorge Ibargüengoitia</p>
+                    <p class="precio-libro"><strong>$150.00</strong></p>
+                    <button class="boton-comprar btn-agregar-carrito" id="btn-add-7" data-id="lib-007" data-nombre="La ley de Herodes" data-precio="150.00">Agregar al carrito</button>
                 </article>
 
                 <!-- Item 4 -->
-                <article class="tarjeta-libro tarjeta-compacta">
+                <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/zL94w1JoIMPolcXCFcud5k1MKdO7SXg3iHXXjSxjd-Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFIQ085OHFJUkwu/anBn">
+                        <img src="https://imgs.search.brave.com/zL94w1JoIMPolcXCFcud5k1MKdO7SXg3iHXXjSxjd-Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFIQ085OHFJUkwu/anBn" alt="Aritmética de la vida">
                     </div>
                     <h3 class="titulo-libro">Aritmética de la vida</h3>
-                    <p class="precio-libro">$350.00</p>
-                    <button class="boton-comprar-pequeno">COMPRAR</button>
+                    <p class="autor-libro">Varios Autores</p>
+                    <p class="precio-libro"><strong>$350.00</strong></p>
+                    <button class="boton-comprar btn-agregar-carrito" id="btn-add-8" data-id="lib-008" data-nombre="Aritmética de la vida" data-precio="350.00">Agregar al carrito</button>
                 </article>
 
-                <!-- Item 5 -->
-                <article class="tarjeta-libro tarjeta-compacta">
+                <!-- Item 5 (SIMULACIÓN DE STOCK 0) -->
+                <article class="tarjeta-libro">
                     <div class="marco-imagen">
-                        <img src="https://imgs.search.brave.com/a1DJJpfzRgDL7ADxhZyND8m1aMkpLtIHEYgqWjwWjTM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RiL2Q2/L2E5L2RiZDZhOTBh/OWQ3YzdjNjE3ZTUx/NjhlN2UzMGNhMjRi/LmpwZw">
+                        <img src="https://imgs.search.brave.com/a1DJJpfzRgDL7ADxhZyND8m1aMkpLtIHEYgqWjwWjTM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RiL2Q2/L2E5L2RiZDZhOTBh/OWQ3YzdjNjE3ZTUx/NjhlN2UzMGNhMjRi/LmpwZw" alt="Una habitación propia">
                     </div>
                     <h3 class="titulo-libro">Una habitación propia</h3>
-                    <p class="precio-libro">$240.00</p>
-                    <button class="boton-comprar-pequeno">COMPRAR</button>
+                    <p class="autor-libro">Virginia Woolf</p>
+                    <p class="precio-libro"><strong>$240.00</strong></p>
+                    <button class="boton-comprar boton-agotado" id="btn-add-9" data-id="lib-009" disabled>Agotado</button>
                 </article>
+              <!-- Item 6 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/TgqlqwpIrH0MCwB-35nt0fUaGAdo98PJWSfm1nVWg24/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bml2/ZXJzb2RlbGF0aWVy/cmFtZWRpYS5lcy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8x/Mi9MaWJyby1FbC1z/ZW5vci1kZS1sb3Mt/YW5pbGxvcy1MYS1D/b211bmlkYWQtZGVs/LWFuaWxsby1kZS10/YXBhLWJsYW5kYS0x/OTZ4MzAwLmpwZw" alt="El Señor de los Anillos: La Comunidad del Anillo">
+    </div>
+    <h3 class="titulo-libro">El Señor de los Anillos: La Comunidad del Anillo</h3>
+    <p class="autor-libro">J.R.R. Tolkien</p>
+    <p class="precio-libro"><strong>$399.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-10" data-id="lib-010" data-nombre="El Señor de los Anillos: La Comunidad del Anillo" data-precio="399.00">Agregar al carrito</button>
+</article>
 
+<!-- Item 7 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/IWFmkzttmdZxvYQF2VmQwknyvAZvCzXeBu113e7vp8g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YWdhcGVhLmNvbS9Q/ZW5ndWluLUNsYXNp/Y29zL09yZ3VsbG8t/eS1wcmVqdWljaW8t/aTFuMTIzOTczMzMu/anBn" alt="Orgullo y Prejuicio">
+    </div>
+    <h3 class="titulo-libro">Orgullo y Prejuicio</h3>
+    <p class="autor-libro">Jane Austen</p>
+    <p class="precio-libro"><strong>$280.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-11" data-id="lib-011" data-nombre="Orgullo y Prejuicio" data-precio="280.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 8 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/7v9mNRdI17S0bWl-yBUc_cNkmgYRg8NGr98xcTKicsI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxTUxTenlTZnRM/LmpwZw" alt="Moby Dick">
+    </div>
+    <h3 class="titulo-libro">Moby Dick</h3>
+    <p class="autor-libro">Herman Melville</p>
+    <p class="precio-libro"><strong>$320.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-12" data-id="lib-012" data-nombre="Moby Dick" data-precio="320.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 9 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/lIEH7F84mC5lQ6pztiD4hJqd_LrHXz6E0bsA3ij9yjg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY2RuMS5idXNj/YWxpYnJlLmNvbS9m/aXQtaW4vMzYweDM2/MC84Ni9mNS84NmY1/NjE4OTQ1ZTJiMDE1/YmNmOWE2MjFmYzMz/OWJkMi5qcGc" alt="Cumbres Borrascosas">
+    </div>
+    <h3 class="titulo-libro">Cumbres Borrascosas</h3>
+    <p class="autor-libro">Emily Brontë</p>
+    <p class="precio-libro"><strong>$295.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-13" data-id="lib-013" data-nombre="Cumbres Borrascosas" data-precio="295.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 10 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/c_FqVX4g1kAp7NUk2CevE3NU9QNumLiF3gjcTIoDUnI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxiYWVkaXRvcmlh/bC5lcy93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8xMC85Nzg4/NDg0Mjg5MjEwLWxv/cy1oZXJtYW5vcy1r/YXJhbWF6b3YtYWxi/YS1lZGl0b3JpYWwu/anBn" alt="Los Hermanos Karamazov">
+    </div>
+    <h3 class="titulo-libro">Los Hermanos Karamazov</h3>
+    <p class="autor-libro">Fiódor Dostoyevski</p>
+    <p class="precio-libro"><strong>$450.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-14" data-id="lib-014" data-nombre="Los Hermanos Karamazov" data-precio="450.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 11 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/i-6oroBnoyndbQPE7RoEHryiMCcL2iegfnEMtatKGkA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aWVu/ZGFlbmxpbmVhLnBy/b2ZldGljYS5jb20u/bXgvaW1hZ2VuZXMv/OTc4ODQ5MC85Nzg4/NDkwNjU3MzQud2Vi/cA" alt="Guerra y Paz">
+    </div>
+    <h3 class="titulo-libro">Guerra y Paz</h3>
+    <p class="autor-libro">León Tolstói</p>
+    <p class="precio-libro"><strong>$520.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-15" data-id="lib-015" data-nombre="Guerra y Paz" data-precio="520.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 12 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/USY4LdNwM9I1sLOY4jt_DBHtnGJSCGPN1dYuifpf8DY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9xdWVs/aWJyb2xlby5jb20v/aW1hZ2VzL2xpYnJv/cy9saWJyby0xNDkw/NjA4MDU1LnBuZw" alt="Madame Bovary">
+    </div>
+    <h3 class="titulo-libro">Madame Bovary</h3>
+    <p class="autor-libro">Gustave Flaubert</p>
+    <p class="precio-libro"><strong>$310.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-16" data-id="lib-016" data-nombre="Madame Bovary" data-precio="310.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 13 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/xTjBIv8JeTCVbdRazC7oIevaWbva23kj7El0gTIF7as/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF84/MDI0MzUtTUxNMzI4/NzQzNTAyNzRfMTEy/MDE5LVYud2VicA" alt="David Copperfield">
+    </div>
+    <h3 class="titulo-libro">David Copperfield</h3>
+    <p class="autor-libro">Charles Dickens</p>
+    <p class="precio-libro"><strong>$380.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-17" data-id="lib-017" data-nombre="David Copperfield" data-precio="380.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 14 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/FIgGN4C8pJJQKMEF_QcSlZA43fIJmgzLfHxUXp0Bx2A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDcuY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvMTcvOTc5/MTM3MDMxMDQxNy53/ZWJw" alt="Rojo y Negro">
+    </div>
+    <h3 class="titulo-libro">Rojo y Negro</h3>
+    <p class="autor-libro">Stendhal</p>
+    <p class="precio-libro"><strong>$340.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-18" data-id="lib-018" data-nombre="Rojo y Negro" data-precio="340.00">Agregar al carrito</button>
+</article>
+
+<!-- Item 15 -->
+<article class="tarjeta-libro">
+    <div class="marco-imagen">
+        <img src="https://imgs.search.brave.com/HME01qfEZ-HuJMMpTKgLWn0h_wlqZaat7dfbwPxdwhI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTE3ZHB6VUlBbEwu/anBn" alt="Papá Goriot">
+    </div>
+    <h3 class="titulo-libro">Papá Goriot</h3>
+    <p class="autor-libro">Honoré de Balzac</p>
+    <p class="precio-libro"><strong>$290.00</strong></p>
+    <button class="boton-comprar btn-agregar-carrito" id="btn-add-19" data-id="lib-019" data-nombre="Papá Goriot" data-precio="290.00">Agregar al carrito</button>
+</article>
             </div>
         </div>
     </section>
 
-    <!-- BLOQUE: Sobre Nosotros / Experiencia -->
+    <!-- BLOQUE: Sobre Nosotros -->
     <section class="seccion-experiencia" id="conocenos">
         <div class="contenedor-doble">
             <div class="columna-texto">
@@ -198,16 +315,14 @@
             </div>
             
             <div class="columna-imagen">
-                <!-- Imagen real de un interior de librería/cafetería acogedora -->
-                <img src="https://imgs.search.brave.com/iuIN6RVCENm9izCyahL94d7wuBOifDvYVjKXZIc0QAM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjAx/MDkyMzc4Ny9lcy9m/b3RvL2xpYnJvcy1l/bi1saWJyZXIlQzMl/QURhLWxpYnJvcy1h/LWxhLXZlbnRhLWVu/LW1lc2EtZW5mb3F1/ZS1zZWxlY3Rpdm8t/Y29uY2VwdG8tZGUt/bGl0ZXJhdHVyYS15/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz01YjQ2Mkl1S0RZ/ZFNlc05WRzVCSHVO/YzM3NmNwclYwejUw/MGNhVm9XNjdzPQ" alt="Interior acogedor de la librería El Túnel" class="imagen-libreria">
+                <img src="https://i.pinimg.com/originals/6e/dc/fe/6edcfeeaf62b8c26ff0781fb4a447599.jpg" alt="Interior acogedor de la librería El Túnel" class="imagen-libreria">
             </div>
         </div>
     </section>
 
-    <!-- BLOQUE: Pie de Página (Footer) -->
+    <!-- BLOQUE: Pie de Página -->
     <footer class="pie-pagina" id="footer-global">
         <div class="contenedor-footer">
-            
             <div class="columna-footer marca-footer">
                 <h3 class="titulo-footer">El Túnel</h3>
                 <p class="texto-footer">Un espacio para los amantes de la literatura. Encuentra tu próxima lectura.</p>
@@ -250,5 +365,36 @@
         </div>
     </footer>
 
+    <!-- =========================================
+         MODAL DEL CARRITO (NUEVO)
+         ========================================= -->
+    <div id="modal-carrito" class="modal-overlay">
+        <div class="modal-contenido">
+            <div class="modal-header">
+                <h2>Tu Carrito</h2>
+                <!-- Botón "X" para cerrar -->
+                <button id="btn-cerrar-carrito" class="btn-cerrar">&times;</button>
+            </div>
+            
+            <div class="modal-body" id="carrito-items-container">
+                <!-- El JS inyectará el mensaje de vacío o los items aquí -->
+            </div>
+
+            <div class="modal-footer">
+                <div class="total-container">
+                    <span>Total:</span>
+                    <span id="carrito-total">$0.00</span>
+                </div>
+                <div class="acciones-carrito">
+                    <!-- Botones inicialmente deshabilitados -->
+                    <button id="btn-vaciar-carrito" class="btn-secundario" disabled>Vaciar carrito</button>
+                    <button id="btn-pagar" class="btn-primario" disabled>Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JS -->
+    <script src="script.js"></script>
 </body>
 </html>
