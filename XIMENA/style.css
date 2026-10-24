@@ -626,3 +626,32 @@ img { max-width: 100%; display: block; }
     opacity: 0.5;
     cursor: not-allowed;
 }
+/* =========================================
+   ESTILOS ADICIONALES PARA EL CARRITO (ELIMINAR ITEM)
+   ========================================= */
+
+/* Agrupamos el precio y el botón de eliminar a la derecha */
+.carrito-item-acciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilo del botón de eliminar (bote de basura) */
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    color: #cc0000; /* Rojo para indicar peligro/borrar */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-eliminar-item:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
