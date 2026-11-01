@@ -1,0 +1,366 @@
+/* --- VARIABLES GLOBALES Y RESET --- */
+:root {
+    --color-primario: #8B5E3C;
+    --color-secundario: #D4A373;
+    --color-fondo: #F3F0E9;
+    --color-texto: #333;
+    --color-precio: #C0392B;
+    --blanco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NUEVO: SCROLL SUAVE AL DAR CLIC EN EL MENÚ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    padding-top: 120px; /* Para el header fijo */
+}
+
+/* --- HEADER Y NAVEGACIÓN FIJOS --- */
+header {
+    background-color: var(--blanco);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-secundario);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: 40%;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    color: var(--color-primario);
+    position: relative;
+}
+
+.cart-icon-container {
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--color-precio);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+nav {
+    background-color: var(--color-secundario);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: fixed;
+    top: 75px; /* Ajusta si es necesario */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- BANNER PRINCIPAL --- */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- SECCIÓN CATÁLOGO --- */
+.container {
+    padding: 40px 5%;
+}
+
+/* NUEVO: Margen superior para que al hacer scroll no quede tapado por el menú fijo */
+#recomendaciones, #mas-leidos, #accesorios {
+    scroll-margin-top: 130px; 
+}
+
+.section-title {
+    color: var(--color-precio);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--color-primario);
+    background: transparent;
+    color: var(--color-primario);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--color-primario);
+    color: white;
+}
+
+/* Grid de Libros con Scroll Horizontal */
+.books-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.book-card {
+    min-width: 220px;
+    max-width: 220px;
+    scroll-snap-align: start;
+    background: var(--blanco);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.book-card:hover { transform: translateY(-5px); }
+
+.book-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ddd;
+}
+
+.book-title { font-size: 1rem; font-weight: bold; margin-bottom: 5px; color: #333; }
+.book-author { font-size: 0.85rem; color: #666; margin-bottom: 10px; }
+.book-price { font-size: 1.2rem; color: var(--color-precio); font-weight: bold; margin-bottom: 10px; }
+
+.btn-add {
+    background-color: var(--color-precio);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-add:hover { background-color: #a93226; }
+.btn-add:disabled { background-color: #ccc; cursor: not-allowed; }
+
+/* Scrollbar personalizado */
+.books-grid::-webkit-scrollbar { height: 10px; }
+.books-grid::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; }
+.books-grid::-webkit-scrollbar-thumb { background: var(--color-precio); border-radius: 10px; border: 2px solid #e0e0e0; }
+.books-grid::-webkit-scrollbar-thumb:hover { background: #a93226; }
+
+/* --- NUEVAS SECCIONES (MÁS LEÍDOS Y ACCESORIOS) --- */
+.seccion-extra {
+    margin-top: 60px;
+    padding-top: 20px;
+}
+
+/* Lista Top Ventas */
+.top-ventas-list {
+    background: var(--blanco);
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #444;
+}
+
+/* Grid Accesorios */
+.accesorios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.accesorio-card {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.accesorio-card:hover { transform: translateY(-5px); }
+
+.accesorio-icon {
+    font-size: 2.5rem;
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+}
+
+.accesorio-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.accesorio-card p { font-size: 0.85rem; color: #666; margin-bottom: 15px; }
+.accesorio-precio { font-size: 1.2rem; color: var(--color-precio); font-weight: bold; }
+
+/* --- SECCIÓN CONÓCENOS --- */
+.conocenos-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.conocenos-texto { flex: 1; }
+.conocenos-title { color: var(--color-precio); font-size: 1.8rem; margin-bottom: 20px; }
+.conocenos-texto p { font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 15px; }
+.conocenos-destacado { color: var(--color-precio); font-weight: bold; font-size: 1.1rem !important; margin-top: 20px; }
+.conocenos-imagen { flex: 1; }
+.conocenos-imagen img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); object-fit: cover; max-height: 400px; }
+
+/* --- MODAL DEL CARRITO --- */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 10px; position: relative; }
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close:hover { color: black; }
+.cart-item { display: flex; align-items: center; border-bottom: 1px solid #eee; padding: 15px 0; gap: 15px; }
+.cart-item-img { width: 50px; height: 75px; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.cart-item-info { flex-grow: 1; display: flex; flex-direction: column; }
+.cart-item-title { font-weight: bold; }
+.cart-item-price { color: var(--color-precio); }
+.cart-controls { display: flex; align-items: center; gap: 10px; }
+.btn-remove { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+.cart-total { text-align: right; font-size: 1.4rem; font-weight: bold; margin-top: 20px; color: var(--color-primario); }
+.cart-actions { display: flex; justify-content: space-between; margin-top: 20px; }
+.btn-checkout { background-color: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.btn-clear { background-color: #95a5a6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+.empty-cart-msg { text-align: center; padding: 20px; color: #777; font-style: italic; }
+
+/* --- FOOTER --- */
+footer {
+    background-color: #A68A64;
+    color: white;
+    padding: 40px 5%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    /* Para que al dar clic en "Sucursal" el footer no quede tapado */
+    scroll-margin-top: 130px; 
+}
+
+footer h3 { margin-bottom: 15px; font-size: 1.1rem; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; font-size: 0.9rem; cursor: pointer; }
+
+/* Estilo para los enlaces del footer */
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer ul li a:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+
+.social-icons { display: flex; gap: 15px; margin-top: 10px; font-size: 1.5rem; }
+
+/* --- NOTIFICACIÓN FLOTANTE (TOAST) --- */
+.toast {
+    visibility: hidden; min-width: 250px; background-color: #27ae60; color: #fff;
+    text-align: center; border-radius: 8px; padding: 16px;
+    position: fixed; z-index: 2000; left: 50%; bottom: 30px;
+    transform: translateX(-50%); font-size: 1rem; font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; transition: opacity 0.3s, bottom 0.3s;
+}
+.toast.show { visibility: visible; opacity: 1; bottom: 50px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 10px; }
+    .search-bar { width: 100%; }
+    .hero h1 { font-size: 1.8rem; }
+    .modal-content { width: 95%; }
+    .conocenos-section { flex-direction: column; gap: 20px; }
+    .conocenos-imagen img { max-height: 300px; }
+}

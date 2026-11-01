@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Túnel - Librería</title>
+    
+    <!-- Enlace a los iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="inicio"> <!-- ID para el Inicio -->
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">El Túnel</div>
+        
+        <!-- Barra de Búsqueda -->
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Buscar por título o autor...">
+        </div>
+
+        <!-- Iconos de Usuario y Carrito -->
+        <div class="header-icons">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-heart"></i>
+            <div class="cart-icon-container" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <!-- Contador del carrito -->
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVEGACIÓN CON ENLACES A SECCIONES (Anclas) -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#recomendaciones">Libros</a>
+        <a href="#mas-leidos">Los más leídos</a>
+        <a href="#accesorios">Accesorios</a>
+        <a href="#sucursal">Sucursal</a>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="hero">
+        <h1>...Creando nuevos mundos, historias y recuerdos</h1>
+        <p>"Siempre concluí, es encontrar futuros recuerdos"</p>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        
+        <!-- SECCIÓN RECOMENDACIONES (Libros) -->
+        <div id="recomendaciones">
+            <h2 class="section-title">Recomendaciones</h2>
+            
+            <!-- Filtros por Categoría -->
+            <div class="filters" id="filterContainer">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="Ficción">Ficción</button>
+                <button class="filter-btn" data-category="Poesía">Poesía</button>
+                <button class="filter-btn" data-category="Novela">Novela</button>
+                <button class="filter-btn" data-category="Clásico">Clásico</button>
+            </div>
+
+            <!-- Grid donde se inyectan los libros con JS -->
+            <div class="books-grid" id="booksGrid"></div>
+        </div>
+
+        <!-- NUEVA SECCIÓN: LOS MÁS LEÍDOS -->
+        <div id="mas-leidos" class="seccion-extra">
+            <h2 class="section-title">Los 5 más vendidos</h2>
+            <ol class="top-ventas-list">
+                <li><strong>1. Cien años de soledad</strong> - Gabriel García Márquez</li>
+                <li><strong>2. Don Quijote de la Mancha</strong> - Miguel de Cervantes</li>
+                <li><strong>3. Harry Potter y la piedra filosofal</strong> - J.K. Rowling</li>
+                <li><strong>4. Orgullo y prejuicio</strong> - Jane Austen</li>
+                <li><strong>5. Rayuela</strong> - Julio Cortázar</li>
+            </ol>
+        </div>
+
+        <!-- NUEVA SECCIÓN: ACCESORIOS -->
+        <div id="accesorios" class="seccion-extra">
+            <h2 class="section-title">Accesorios y Regalos</h2>
+            <div class="accesorios-grid">
+                <div class="accesorio-card">
+                    <i class="fas fa-bookmark accesorio-icon"></i>
+                    <h3>Separadores</h3>
+                    <p>Set de 5 separadores magnéticos.</p>
+                    <span class="accesorio-precio">$50.00</span>
+                </div>
+                <div class="accesorio-card">
+                    <i class="fas fa-key accesorio-icon"></i>
+                    <h3>Llaveros</h3>
+                    <p>Llavero metálico con forma de libro.</p>
+                    <span class="accesorio-precio">$80.00</span>
+                </div>
+                <div class="accesorio-card">
+                    <i class="fas fa-shopping-bag accesorio-icon"></i>
+                    <h3>Bolsas para regalo</h3>
+                    <p>Bolsas de papel kraft temáticas.</p>
+                    <span class="accesorio-precio">$30.00</span>
+                </div>
+                <div class="accesorio-card">
+                    <i class="fas fa-lightbulb accesorio-icon"></i>
+                    <h3>Lámparas para leer</h3>
+                    <p>Lámpara LED portátil para libros.</p>
+                    <span class="accesorio-precio">$150.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN CONÓCENOS -->
+        <section class="conocenos-section">
+            <div class="conocenos-texto">
+                <h2 class="conocenos-title">Conócenos</h2>
+                <p>El Túnel es una cafetería ideal para los amantes de la literatura.</p>
+                <p>Además de su servicio de venta de libros y productos en línea puedes visitar nuestra sucursal y acompañar tu lectura con una taza de café o bebida de tu elección, o bien, disfrutar de los diversos eventos culturales que tenemos para ti.</p>
+                <p>Síguenos en redes sociales y mantente atento a la cartelera de eventos.</p>
+                <p class="conocenos-destacado">¡Te esperamos!</p>
+            </div>
+            <div class="conocenos-imagen">
+                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Interior de la cafetería El Túnel">
+            </div>
+        </section>
+
+    </div> <!-- Fin del contenedor principal .container -->
+
+    <!-- MODAL DEL CARRITO DE COMPRAS -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="cartItemsContainer"></div>
+            <div class="cart-total" id="cartTotal">Total: $0.00</div>
+            <div class="cart-actions">
+                <button class="btn-clear" id="clearCartBtn">Vaciar Carrito</button>
+                <button class="btn-checkout" id="checkoutBtn">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante (Toast) -->
+    <div id="toast-notification" class="toast">¡Libro agregado al carrito!</div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="sucursal"> <!-- ID Sucursal -->
+        <div>
+            <h3>El Túnel</h3>
+            <p style="font-size: 0.8rem; line-height: 1.4;">Un espacio para los amantes de la literatura. Encuentra tu próxima lectura favorita.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+        <div>
+            <h3>Información</h3>
+            <ul>
+                <!-- Enlaces del footer con las mismas anclas -->
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#recomendaciones">Libros</a></li>
+                <li><a href="#mas-leidos">Los más leídos</a></li>
+                <li><a href="#accesorios">Accesorios</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Sucursal</h3>
+            <p style="font-size: 0.9rem;"><i class="fas fa-map-marker-alt"></i> Av. Álvaro Obregón 99, Roma Norte, CDMX</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-phone"></i> 55 88 99 87</p>
+        </div>
+        <div>
+            <h3>Suscríbete</h3>
+            <p style="font-size: 0.8rem; margin-bottom: 10px;">Recibe noticias de promociones y eventos.</p>
+            <input type="email" placeholder="Tu email" style="padding: 5px; width: 100%;">
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
