@@ -1,726 +1,584 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Túnel - Librería</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- ================= HEADER ================= -->
-    <header>
-        <div class="contenedor">
-            <a href="#" class="logo">El Túnel</a>
-            
-            <form action="#" method="GET" class="formulario-busqueda">
-                <input type="text" name="q" placeholder="Buscar..." required>
-                <button type="submit" class="boton-buscar">
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png" alt="Buscar">
-                </button>
-            </form>
-
-            <div class="iconos-usuario">
-                <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Favoritos"></a>
-                
-                <!-- Carrito con contador -->
-                <a href="#" id="btn-carrito" style="position: relative; display: inline-block;">
-                    <img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png" alt="Carrito">
-                    <span id="contador-carrito" style="
-                        position: absolute;
-                        top: -8px;
-                        right: -10px;
-                        background-color: var(--color-rojo-botones);
-                        color: white;
-                        font-size: 0.7rem;
-                        font-weight: bold;
-                        width: 18px;
-                        height: 18px;
-                        border-radius: 50%;
-                        display: none;
-                        align-items: center;
-                        justify-content: center;
-                    ">0</span>
-                </a>
-                
-                <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="Perfil"></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ================= NAVBAR ================= -->
-    <nav>
-        <div class="contenedor">
-            <ul class="menu-principal">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Libros</a></li>
-                <li><a href="#">Los más leídos</a></li>
-                <li><a href="#">Accesorios</a></li>
-                <li><a href="#">Sucursal</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ================= MAIN ================= -->
-    <main>
-        
-        <section class="seccion-banner">
-            <div class="texto-banner">
-                <h1>...Creando nuevos mundos, historias y recuerdos</h1>
-                <p>"Vive conmigo, sé consciente de nuestros recuerdos"</p>
-            </div>
-        </section>
-
-        <div class="contenedor">
-            <!-- Sección 1: Recomendaciones -->
-            <section>
-                <div class="encabezado-seccion">
-                    <h2 class="titulo-seccion">Recomendaciones</h2>
-                </div>
-                
-                <div class="carrusel-libros">
-                    <div class="tarjeta-libro" data-id="lib-001" data-stock="5">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://libreriapensar.com/wp-content/uploads/2020/10/9789585234048-1.jpg" alt="Harry Potter y la piedra"></a>
-                        </div>
-                        <h3>Harry Potter y la piedra</h3>
-                        <p class="autor-libro">J.K. Rowling</p>
-                        <p class="precio"><strong>$350.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-002" data-stock="3">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://th.bing.com/th/id/R.d5b8415fcb35fb1d5450f83146a7d716?rik=fHhmU%2fiVShGnCw&pid=ImgRaw&r=0" alt="Cien años de soledad"></a>
-                        </div>
-                        <h3>Cien años de soledad</h3>
-                        <p class="autor-libro">Gabriel García Márquez</p>
-                        <p class="precio"><strong>$420.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-003" data-stock="0">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660177779i/61931275.jpg" alt="La insoportable levedad del ser"></a>
-                        </div>
-                        <h3>La insoportable levedad del ser</h3>
-                        <p class="autor-libro">Milan Kundera</p>
-                        <p class="precio"><strong>$380.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-004" data-stock="8">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://www.isliada.org/static/images/2018/11/Como-agua-para-chocolate.jpg" alt="Como agua para chocolate"></a>
-                        </div>
-                        <h3>Como agua para chocolate</h3>
-                        <p class="autor-libro">Laura Esquivel</p>
-                        <p class="precio"><strong>$290.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-101" data-stock="4">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://m.media-amazon.com/images/I/91IxbReQwhL.jpg" alt="El amor en los tiempos del cólera"></a>
-                        </div>
-                        <h3>El amor en los tiempos del cólera</h3>
-                        <p class="autor-libro">Gabriel García Márquez</p>
-                        <p class="precio"><strong>$390.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-102" data-stock="2">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg" alt="1984"></a>
-                        </div>
-                        <h3>1984</h3>
-                        <p class="autor-libro">George Orwell</p>
-                        <p class="precio"><strong>$310.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-103" data-stock="6">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://th.bing.com/th/id/R.dc9e50ecbce3ac803c773df50e1eb8cd?rik=Xd7npdQtcnXzHQ&riu=http%3a%2f%2fellector.com.py%2fproduct_photos%2f24b89be1%2fa8c113700eae2924163eaccf5946034b.jpg&ehk=HPRD%2bYJ9YCxDzC%2b0ai%2bnKqHdjkSK5iJTry%2bnDPpuEL4%3d&risl=&pid=ImgRaw&r=0" alt="El principito"></a>
-                        </div>
-                        <h3>El principito</h3>
-                        <p class="autor-libro">Antoine de Saint-Exupéry</p>
-                        <p class="precio"><strong>$220.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-104" data-stock="0">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://m.media-amazon.com/images/I/71LE8Hi+pbL._SL1500_.jpg" alt="Fahrenheit 451"></a>
-                        </div>
-                        <h3>Fahrenheit 451</h3>
-                        <p class="autor-libro">Ray Bradbury</p>
-                        <p class="precio"><strong>$280.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-105" data-stock="5">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://tse4.mm.bing.net/th/id/OIP.12yDgvAm_1d0cVJ1nHL66gHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="El código Da Vinci"></a>
-                        </div>
-                        <h3>El código Da Vinci</h3>
-                        <p class="autor-libro">Dan Brown</p>
-                        <p class="precio"><strong>$360.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-106" data-stock="7">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://th.bing.com/th/id/R.89bf7b42421b4c64bd44827a1092c4c1?rik=DBMSG%2fFS4LYoiA&riu=http%3a%2f%2floslibrosdelbuho.es%2fwp-content%2fuploads%2f2015%2f10%2fLos-Juegos-del-Hambre.jpg&ehk=Iy5pRdCiG1kBX0xeCshyrEx%2f%2bqQ7%2fSaXfL9OCCHeNEA%3d&risl=&pid=ImgRaw&r=0" alt="Los juegos del hambre"></a>
-                        </div>
-                        <h3>Los juegos del hambre</h3>
-                        <p class="autor-libro">Suzanne Collins</p>
-                        <p class="precio"><strong>$340.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-107" data-stock="3">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://m.media-amazon.com/images/I/91GSTr5rPqL._SL1500_.jpg" alt="El hobbit"></a>
-                        </div>
-                        <h3>El hobbit</h3>
-                        <p class="autor-libro">J.R.R. Tolkien</p>
-                        <p class="precio"><strong>$410.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-108" data-stock="9">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://m.media-amazon.com/images/I/815v9re-uIL._SL1500_.jpg" alt="Cumbres borrascosas"></a>
-                        </div>
-                        <h3>Cumbres borrascosas</h3>
-                        <p class="autor-libro">Emily Brontë</p>
-                        <p class="precio"><strong>$270.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección 2: Libros -->
-            <section>
-                <div class="encabezado-seccion">
-                    <h2 class="titulo-seccion">Libros</h2>
-                    <button id="btn-ver-mas" class="enlace-ver-mas">Ver más</button>
-                </div>
-                
-                <div class="carrusel-libros" id="carrusel-principal">
-                    <div class="tarjeta-libro" data-id="lib-006" data-stock="4">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://tse1.mm.bing.net/th/id/OIP.8d8kEwPGZ-x3dJqGP1XScAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Fuerte es el silencio"></a>
-                        </div>
-                        <h3>Fuerte es el silencio</h3>
-                        <p class="autor-libro">Elena Poniatowska</p>
-                        <p class="precio"><strong>$450.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-007" data-stock="6">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://resizer.glanacion.com/resizer/v2/primera-caratula-de-rayuela-publicada-el-28-de-Z7VMTPR5KJGPDNUG776X5KCKHA.png?auth=9aa3bcf1bf784345f36c3c6a2a35f425221b5fc7d7cd7b55eb46d8bc24193581&width=420&height=633&quality=70&smart=true" alt="Rayuela"></a>
-                        </div>
-                        <h3>Rayuela</h3>
-                        <p class="autor-libro">Julio Cortázar</p>
-                        <p class="precio"><strong>$445.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-008" data-stock="1">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://tse2.mm.bing.net/th/id/OIP.9mEGar05VAjVrATuZtj82AHaKk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="La ley de los héroes"></a>
-                        </div>
-                        <h3>La ley de herodes</h3>
-                        <p class="autor-libro">Jorge Ibargüengoitia</p>
-                        <p class="precio"><strong>$150.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-009" data-stock="0">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://th.bing.com/th/id/R.b0350a3a762e26c3a145a277514ad237?rik=M0Ve9dKoikzSXQ&riu=http%3a%2f%2felemblob.blob.core.windows.net%2fmedia%2farrancame-la-vida-angeles-mastretta-1848-mlu4373427457_052013-f57b39e8d1ec21_300h.jpg&ehk=kyjP8JwrkVsdgQBs0hrM5tWmFUd2w%2b%2fnWoruYNWXVbI%3d&risl=&pid=ImgRaw&r=0" alt="Arráncame la vida"></a>
-                        </div>
-                        <h3>Arráncame la vida</h3>
-                        <p class="autor-libro">Ángeles Mastretta</p>
-                        <p class="precio"><strong>$350.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro" data-id="lib-010" data-stock="7">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://2.bp.blogspot.com/-Ln5u-hS_b8Q/WaszRYr4kzI/AAAAAAAAA4Y/JHdfv-0BuN4GoIJGNuSoukZBV3XK8VyXgCLcBGAs/s1600/VIRGINIA%2BWOOLF.jpg" alt="Una habitación propia"></a>
-                        </div>
-                        <h3>Una habitación propia</h3>
-                        <p class="autor-libro">Virginia Woolf</p>
-                        <p class="precio"><strong>$240.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-011" data-stock="3" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://imgs.search.brave.com/cqf3YW87iP2CQuDy16PWhBSkRBz95P-34wnaUyNUNUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zczM2/NS5saXZlcnBvb2wu/Y29tLm14L3hsLzEx/OTA0MjI2MDMuanBn" alt="Las Batallas en el Desierto"></a>
-                        </div>
-                        <h3>Las Batallas en el Desierto</h3>
-                        <p class="autor-libro">José Emilio Pacheco</p>
-                        <p class="precio"><strong>$300.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-                    
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-012" data-stock="5" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="harry-potter.jpg" alt="Libro Extra 2"></a>
-                        </div>
-                        <h3>Libro Extra 2</h3>
-                        <p class="autor-libro">Autor Extra</p>
-                        <p class="precio"><strong>$200.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-201" data-stock="4" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dracula_1st_ed_cover.jpg/220px-Dracula_1st_ed_cover.jpg" alt="Drácula"></a>
-                        </div>
-                        <h3>Drácula</h3>
-                        <p class="autor-libro">Bram Stoker</p>
-                        <p class="precio"><strong>$320.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-202" data-stock="6" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Frankenstein_1818.jpg/220px-Frankenstein_1818.jpg" alt="Frankenstein"></a>
-                        </div>
-                        <h3>Frankenstein</h3>
-                        <p class="autor-libro">Mary Shelley</p>
-                        <p class="precio"><strong>$290.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-203" data-stock="2" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/PrideAndPrejudice_FirstEdition.jpg/220px-PrideAndPrejudice_FirstEdition.jpg" alt="Orgullo y prejuicio"></a>
-                        </div>
-                        <h3>Orgullo y prejuicio</h3>
-                        <p class="autor-libro">Jane Austen</p>
-                        <p class="precio"><strong>$310.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-204" data-stock="5" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Don_Quijote_de_la_Mancha_1605.jpg/220px-Don_Quijote_de_la_Mancha_1605.jpg" alt="Don Quijote de la Mancha"></a>
-                        </div>
-                        <h3>Don Quijote de la Mancha</h3>
-                        <p class="autor-libro">Miguel de Cervantes</p>
-                        <p class="precio"><strong>$500.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-205" data-stock="7" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/La_sombra_del_viento.jpg/220px-La_sombra_del_viento.jpg" alt="La sombra del viento"></a>
-                        </div>
-                        <h3>La sombra del viento</h3>
-                        <p class="autor-libro">Carlos Ruiz Zafón</p>
-                        <p class="precio"><strong>$380.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-206" data-stock="3" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Il_nome_della_rosa.jpg/220px-Il_nome_della_rosa.jpg" alt="El nombre de la rosa"></a>
-                        </div>
-                        <h3>El nombre de la rosa</h3>
-                        <p class="autor-libro">Umberto Eco</p>
-                        <p class="precio"><strong>$420.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-207" data-stock="8" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/The_Picture_of_Dorian_Gray.jpg/220px-The_Picture_of_Dorian_Gray.jpg" alt="El retrato de Dorian Gray"></a>
-                        </div>
-                        <h3>El retrato de Dorian Gray</h3>
-                        <p class="autor-libro">Oscar Wilde</p>
-                        <p class="precio"><strong>$330.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-
-                    <div class="tarjeta-libro libro-oculto" data-id="lib-208" data-stock="0" style="display: none;">
-                        <div class="contenedor-imagen">
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Moby-Dick.jpg/220px-Moby-Dick.jpg" alt="Moby Dick"></a>
-                        </div>
-                        <h3>Moby Dick</h3>
-                        <p class="autor-libro">Herman Melville</p>
-                        <p class="precio"><strong>$390.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección 3: Conócenos -->
-            <section class="seccion-conocenos">
-                <div class="conocenos-texto">
-                    <h2>Conócenos</h2>
-                    <p>El Túnel es una cafetería ideal para los amantes de la literatura.</p>
-                    <p>Además de su servicio de venta de libros y productos en línea puedes visitar nuestra sucursal y disfrutar de un café de altura, en un espacio acogedor, e incluso, ser testigo de los diversos eventos culturales que tenemos para ti.</p>
-                    <p>Síguenos en redes sociales y mantente atento a la cartelera de eventos.</p>
-                    <p><strong>¡Te esperamos!</strong></p>
-                </div>
-                <div class="conocenos-imagen">
-                    <a href="#"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000&auto=format&fit=crop" alt="Interior de la librería"></a>
-                </div>
-            </section>
-        </div>
-    </main>
-        <!-- ================= FOOTER ================= -->
-    <footer>
-        <div class="contenedor">
-            <div class="footer-grid">
-                <section class="footer-col">
-                    <h4>El Túnel</h4>
-                    <p>Un espacio para los amantes de la literatura. Encuentra la magia a través de nuestros libros.</p>
-                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/marker--v1.png" alt="Ubicación" class="icono-footer">Av. Álvaro Obregón 99, Roma Norte, Cuauhtémoc, 06700 CDMX</p>
-                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png" alt="Teléfono" class="icono-footer">+52 55 58 27 87 67</p>
-                    <p><img src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="Email" class="icono-footer">hola@eltunel.com.mx</p>
-                    <div class="redes-sociales">
-                        <a href="https://facebook.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/facebook-new.png" alt="Facebook"></a>
-                        <a href="https://instagram.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png" alt="Instagram"></a>
-                        <a href="https://twitter.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png" alt="Twitter"></a>
-                        <a href="https://youtube.com" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/youtube-play.png" alt="YouTube"></a>
-                    </div>
-                </section>
-
-                <section class="footer-col">
-                    <h4>Información</h4>
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Acerca de El Túnel</a></li>
-                        <li><a href="#">Sucursales</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Facturación</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Términos y condiciones</a></li>
-                    </ul>
-                </section>
-
-                <section class="footer-col suscripcion">
-                    <h4>Suscríbete</h4>
-                    <p>Recibirás noticias de promociones, eventos y novedades literarias.</p>
-                    <input type="email" placeholder="Ingresa tu email">
-                    <button>Enviar</button>
-                </section>
-            </div>
-
-            <div class="pie-derechos">
-                <p>2024 © El Túnel. Todos los Derechos Reservados. | Diseñado por Escuela de Código ADIP.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ================= MODAL DEL CARRITO ================= -->
-    <div id="modal-carrito" class="modal-fondo">
-        <div class="modal-contenido">
-            <button id="btn-cerrar-modal" class="boton-cerrar">&times;</button>
-            <h2>Tu Carrito</h2>
-            
-            <div id="lista-carrito" class="lista-carrito"></div>
-
-            <div class="resumen-carrito">
-                <p>Total: <strong id="total-carrito">$0.00</strong></p>
-            </div>
-
-            <div class="acciones-carrito">
-                <button id="btn-vaciar" class="boton-vaciar" disabled>Vaciar carrito</button>
-                <button id="btn-pagar" class="boton-pagar" disabled>Pagar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ================= NOTIFICACIÓN FLOTANTE (TOAST) ================= -->
-    <div id="notificacion" style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #2e7d32;
-        color: white;
-        padding: 15px 25px;
-        border-radius: 5px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        font-size: 1rem;
-        font-weight: bold;
-        z-index: 9999;
-        display: none;
-        align-items: center;
-        gap: 10px;
-    ">
-        ✅ <span id="texto-notificacion">Libro agregado</span>
-    </div>
-
-    <!-- ================= SCRIPT INTEGRADO ================= -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // ==========================================
-            // 1. LÓGICA DE STOCK VISUAL (Agotado)
-            // ==========================================
-            const tarjetas = document.querySelectorAll('.tarjeta-libro');
-            tarjetas.forEach(tarjeta => {
-                const stock = parseInt(tarjeta.getAttribute('data-stock'));
-                const boton = tarjeta.querySelector('.boton-agregar');
-                if (stock === 0 && boton) {
-                    boton.textContent = 'Agotado';
-                    boton.classList.add('agotado');
-                    boton.disabled = true;
-                }
-            });
-
-            // ==========================================
-            // 2. LÓGICA DE "VER MÁS"
-            // ==========================================
-            const btnVerMas = document.getElementById('btn-ver-mas');
-            const librosOcultos = document.querySelectorAll('.libro-oculto');
-            let mostrandoExtra = false;
-
-            if (btnVerMas) {
-                btnVerMas.addEventListener('click', function() {
-                    librosOcultos.forEach(libro => {
-                        libro.style.display = mostrandoExtra ? 'none' : 'flex';
-                    });
-                    mostrandoExtra = !mostrandoExtra;
-                    btnVerMas.textContent = mostrandoExtra ? 'Ver menos' : 'Ver más';
-                });
-            }
-
-            // ==========================================
-            // 3. LÓGICA DEL SONIDO (Web Audio API)
-            // ==========================================
-            // Esto genera un sonido de "clic" directamente con el navegador.
-            // No usa archivos MP3 externos, así que no falla por CORS.
-            let audioContext;
-            
-            function reproducirSonidoClic() {
-                try {
-                    if (!audioContext) {
-                        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    }
-                    if (audioContext.state === 'suspended') {
-                        audioContext.resume();
-                    }
-
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-
-                    // Sonido: un "tic" corto y agudo
-                    oscillator.type = 'sine';
-                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-                    
-                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-
-                    oscillator.start(audioContext.currentTime);
-                    oscillator.stop(audioContext.currentTime + 0.1);
-                } catch (error) {
-                    console.log("Error con el audio:", error);
-                }
-            }
-
-            // ==========================================
-            // 4. LÓGICA DEL CARRITO CON LOCALSTORAGE
-            // ==========================================
-            
-            const btnCarritoHeader = document.getElementById('btn-carrito');
-            const modalCarrito = document.getElementById('modal-carrito');
-            const btnCerrarModal = document.getElementById('btn-cerrar-modal');
-            const listaCarrito = document.getElementById('lista-carrito');
-            const totalCarrito = document.getElementById('total-carrito');
-            const btnVaciar = document.getElementById('btn-vaciar');
-            const btnPagar = document.getElementById('btn-pagar');
-            const contadorCarrito = document.getElementById('contador-carrito');
-            
-            const notificacion = document.getElementById('notificacion');
-            const textoNotificacion = document.getElementById('texto-notificacion');
-            let temporizadorNotificacion;
-
-            let carrito = [];
-
-            // 4.1 Cargar carrito desde localStorage
-            function cargarCarritoDesdeStorage() {
-                const carritoGuardado = localStorage.getItem('carritoElTunel');
-                if (carritoGuardado) {
-                    carrito = JSON.parse(carritoGuardado);
-                } else {
-                    carrito = [];
-                }
-                actualizarContador();
-            }
-
-            // 4.2 Guardar carrito en localStorage
-            function guardarCarritoEnStorage() {
-                localStorage.setItem('carritoElTunel', JSON.stringify(carrito));
-            }
-
-            // 4.3 Actualizar contador visual
-            function actualizarContador() {
-                const totalItems = carrito.reduce((suma, libro) => suma + libro.cantidad, 0);
-                contadorCarrito.textContent = totalItems;
-                contadorCarrito.style.display = totalItems > 0 ? 'flex' : 'none';
-            }
-
-            // 4.4 Mostrar Notificación Flotante
-            function mostrarNotificacion(mensaje) {
-                textoNotificacion.textContent = mensaje;
-                notificacion.style.display = 'flex';
-                
-                clearTimeout(temporizadorNotificacion);
-                temporizadorNotificacion = setTimeout(() => {
-                    notificacion.style.display = 'none';
-                }, 3000);
-            }
-
-            // 4.5 Agregar al carrito
-            function agregarAlCarrito(id, titulo, precio, stockMaximo) {
-                const libroExistente = carrito.find(libro => libro.id === id);
-
-                if (libroExistente) {
-                    if (libroExistente.cantidad < stockMaximo) {
-                        libroExistente.cantidad++;
-                    } else {
-                        mostrarNotificacion('⚠️ Stock máximo alcanzado');
-                        return;
-                    }
-                } else {
-                    carrito.push({
-                        id: id,
-                        titulo: titulo,
-                        precio: precio,
-                        cantidad: 1,
-                        stockMaximo: stockMaximo
-                    });
-                }
-
-                guardarCarritoEnStorage();
-                actualizarContador();
-                renderizarCarrito();
-                
-                // EFECTOS: Sonido + Notificación
-                reproducirSonidoClic();
-                mostrarNotificacion('¡' + titulo + ' agregado!');
-            }
-
-            // 4.6 Delegación de eventos
-            document.addEventListener('click', function(e) {
-                const boton = e.target.closest('.boton-agregar');
-                
-                if (boton) {
-                    e.preventDefault();
-                    
-                    if (boton.disabled || boton.classList.contains('agotado')) {
-                        return;
-                    }
-
-                    const tarjeta = boton.closest('.tarjeta-libro');
-                    const id = tarjeta.getAttribute('data-id');
-                    const titulo = tarjeta.querySelector('h3').textContent.trim();
-                    const precioTexto = tarjeta.querySelector('.precio strong').textContent;
-                    const precio = parseFloat(precioTexto.replace('$', '').trim());
-                    const stock = parseInt(tarjeta.getAttribute('data-stock'));
-
-                    agregarAlCarrito(id, titulo, precio, stock);
-                }
-            });
-
-            // 4.7 Abrir Modal
-            if (btnCarritoHeader) {
-                btnCarritoHeader.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    modalCarrito.classList.add('activo');
-                    renderizarCarrito();
-                });
-            }
-
-            // 4.8 Cerrar Modal (X)
-            if (btnCerrarModal) {
-                btnCerrarModal.addEventListener('click', function() {
-                    modalCarrito.classList.remove('activo');
-                });
-            }
-
-            // 4.9 Cerrar Modal (Clic fuera)
-            window.addEventListener('click', function(e) {
-                if (e.target === modalCarrito) {
-                    modalCarrito.classList.remove('activo');
-                }
-            });
-
-            // 4.10 Vaciar Carrito
-            if (btnVaciar) {
-                btnVaciar.addEventListener('click', function() {
-                    if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
-                        carrito = []; 
-                        guardarCarritoEnStorage();
-                        actualizarContador();
-                        renderizarCarrito();
-                        mostrarNotificacion('🗑️ Carrito vaciado');
-                    }
-                });
-            }
-
-            // 4.11 Pagar
-            if (btnPagar) {
-                btnPagar.addEventListener('click', function() {
-                    if (carrito.length > 0) {
-                        alert('¡Gracias por tu compra! Total: ' + totalCarrito.textContent);
-                        carrito = [];
-                        guardarCarritoEnStorage();
-                        actualizarContador();
-                        renderizarCarrito();
-                        modalCarrito.classList.remove('activo');
-                    }
-                });
-            }
-
-            // 4.12 Renderizar Carrito
-            function renderizarCarrito() {
-                listaCarrito.innerHTML = '';
-
-                if (carrito.length === 0) {
-                    listaCarrito.innerHTML = '<p class="mensaje-vacio">Tu carrito está vacío. ¡Agrega algunos libros!</p>';
-                    totalCarrito.textContent = '$0.00';
-                    btnPagar.disabled = true;
-                    btnVaciar.disabled = true;
-                } else {
-                    let total = 0;
-                    carrito.forEach(libro => {
-                        const item = document.createElement('div');
-                        item.classList.add('item-carrito');
-                        item.innerHTML = `
-                            <div class="item-carrito-info">
-                                <strong>${libro.titulo}</strong>
-                                <span>${libro.cantidad} x $${libro.precio.toFixed(2)}</span>
-                            </div>
-                            <span>$${(libro.cantidad * libro.precio).toFixed(2)}</span>
-                        `;
-                        listaCarrito.appendChild(item);
-                        total += libro.cantidad * libro.precio;
-                    });
-                    totalCarrito.textContent = `$${total.toFixed(2)}`;
-                    btnPagar.disabled = false;
-                    btnVaciar.disabled = false;
-                }
-            }
-
-            // 5. INICIALIZAR
-            cargarCarritoDesdeStorage();
-            renderizarCarrito();
-
-        });
-    </script>
-</body>
-</html>
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES Y VARIABLES GLOBALES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --color-fondo-claro: #f9f9f9;
+    --color-blanco: #ffffff;
+    --color-cafe-navbar: #b39b7d;
+    --color-cafe-footer: #b39b7d;
+    --color-cafe-logo: #7a4f2b;
+    --color-rojo-titulos: #7b1c1c;
+    --color-rojo-botones: #a52020;
+    --color-texto-principal: #333333;
+    --color-texto-secundario: #777777;
+    --color-gris-borde: #e0e0e0;
+    --fuente-titulos: 'Playfair Display', Georgia, serif;
+    --fuente-cuerpo: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ==========================================================================
+   2. HEADER
+   ========================================================================== */
+header {
+    background-color: var(--color-blanco);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-gris-borde);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    color: var(--color-cafe-logo);
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+header .formulario-busqueda {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fondo-claro);
+    border: 1px solid var(--color-gris-borde);
+    border-radius: 25px;
+    padding: 5px 10px 5px 20px;
+    width: 380px;
+}
+
+header .formulario-busqueda input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    color: var(--color-texto-principal);
+}
+
+header .boton-buscar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+header .boton-buscar:hover { opacity: 1; }
+header .boton-buscar img { width: 18px; height: 18px; }
+
+header .iconos-usuario {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+header .iconos-usuario img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+header .iconos-usuario img:hover { opacity: 1; }
+
+/* ==========================================================================
+   3. NAVBAR
+   ========================================================================== */
+nav {
+    background-color: var(--color-cafe-navbar);
+    padding: 15px 0;
+}
+
+nav ul.menu-principal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul.menu-principal li a {
+    color: var(--color-blanco);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+nav ul.menu-principal li a:hover { color: #f0e6d2; }
+
+/* ==========================================================================
+   4. BANNER PRINCIPAL
+   ========================================================================== */
+.seccion-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('banner.jpg'); 
+    background-color: #4a3b2c;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.seccion-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.seccion-banner .texto-banner {
+    position: relative;
+    z-index: 1;
+    color: var(--color-blanco);
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.seccion-banner h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.seccion-banner p {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   5. SECCIONES DE LIBROS (Recomendaciones y Libros)
+   ========================================================================== */
+section { margin-bottom: 70px; }
+
+.encabezado-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rojo-titulos);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.enlace-ver-mas {
+    background: none;
+    border: none;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.enlace-ver-mas:hover { color: var(--color-rojo-titulos); }
+
+/* Carrusel Horizontal */
+.carrusel-libros {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Personalización de la barra de scroll */
+.carrusel-libros::-webkit-scrollbar { height: 8px; }
+.carrusel-libros::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+.carrusel-libros::-webkit-scrollbar-thumb { background: var(--color-rojo-botones); border-radius: 4px; }
+.carrusel-libros::-webkit-scrollbar-thumb:hover { background: #8b1a1a; }
+
+/* Tarjetas de Libro */
+.tarjeta-libro {
+    background: var(--color-blanco);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 220px; 
+    max-width: 220px;
+    flex: 0 0 auto;
+}
+
+.tarjeta-libro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contenedor-imagen {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-libro:hover .contenedor-imagen img { transform: scale(1.05); }
+
+.tarjeta-libro h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--color-texto-principal);
+}
+
+.tarjeta-libro .autor-libro {
+    color: var(--color-texto-secundario);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-libro .precio {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--color-texto-principal);
+}
+
+.tarjeta-libro .precio strong { font-weight: 700; }
+
+.tarjeta-libro button {
+    background-color: var(--color-rojo-botones);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    margin-top: auto;
+}
+
+.tarjeta-libro button:hover { background-color: #8b1a1a; }
+
+.tarjeta-libro button.agotado {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+/* ==========================================================================
+   6. SECCIÓN CONÓCENOS
+   ========================================================================== */
+.seccion-conocenos {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: var(--color-fondo-claro);
+    padding: 40px 0;
+    margin-bottom: 60px;
+}
+
+.seccion-conocenos .conocenos-texto { flex: 1; }
+
+.seccion-conocenos h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rojo-titulos);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.seccion-conocenos p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.seccion-conocenos .conocenos-imagen { flex: 1; }
+
+.seccion-conocenos .conocenos-imagen img {
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--color-cafe-footer);
+    padding: 50px 0 20px 0;
+    color: var(--color-texto-principal);
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.footer-col p, .footer-col li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-col ul li a { transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--color-rojo-botones); }
+
+.icono-footer {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    opacity: 0.7;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.redes-sociales img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.suscripcion input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    background-color: transparent;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.suscripcion button {
+    background-color: var(--color-rojo-botones);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 0.8rem;
+}
+
+.pie-derechos {
+    text-align: center;
+    border-top: 1px solid #9c866a;
+    padding-top: 20px;
+    font-size: 0.75rem;
+    color: #444;
+}
+
+/* ==========================================================================
+   8. MODAL DEL CARRITO
+   ========================================================================== */
+.modal-fondo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-fondo.activo { display: flex; }
+
+.modal-contenido {
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-contenido h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-cafe-logo);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-gris-borde);
+    padding-bottom: 10px;
+}
+
+.boton-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.boton-cerrar:hover { color: var(--color-rojo-botones); }
+
+.lista-carrito {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    padding: 40px 0;
+    font-style: italic;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-gris-borde);
+}
+
+.item-carrito-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-carrito-info strong { font-size: 1rem; }
+.item-carrito-info span { font-size: 0.85rem; color: var(--color-texto-secundario); }
+
+.resumen-carrito {
+    text-align: right;
+    font-size: 1.2rem;
+    border-top: 2px solid var(--color-gris-borde);
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.acciones-carrito {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.boton-vaciar {
+    background-color: transparent;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-gris-borde);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.boton-vaciar:hover:not(:disabled) { background-color: #f1f1f1; }
+
+.boton-pagar {
+    background-color: var(--color-rojo-botones);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton-pagar:hover:not(:disabled) { background-color: #8b1a1a; }
+
+.boton-vaciar:disabled,
+.boton-pagar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   9. DISEÑO RESPONSIVO
+   ========================================================================== */
+@media (max-width: 900px) {
+    .seccion-conocenos { flex-direction: column; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    header .contenedor { flex-direction: column; gap: 15px; }
+    header .formulario-busqueda { width: 100%; }
+    nav ul.menu-principal { flex-wrap: wrap; gap: 15px; }
+    .seccion-banner h1 { font-size: 2rem; }
+}
