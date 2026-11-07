@@ -22,7 +22,27 @@
 
             <div class="iconos-usuario">
                 <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Favoritos"></a>
-                <a href="#" id="btn-carrito"><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png" alt="Carrito"></a>
+                
+                <!-- Carrito con contador -->
+                <a href="#" id="btn-carrito" style="position: relative; display: inline-block;">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart--v1.png" alt="Carrito">
+                    <span id="contador-carrito" style="
+                        position: absolute;
+                        top: -8px;
+                        right: -10px;
+                        background-color: var(--color-rojo-botones);
+                        color: white;
+                        font-size: 0.7rem;
+                        font-weight: bold;
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                    ">0</span>
+                </a>
+                
                 <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="Perfil"></a>
             </div>
         </div>
@@ -59,134 +79,116 @@
                 </div>
                 
                 <div class="carrusel-libros">
-                    <!-- 4 Libros originales -->
                     <div class="tarjeta-libro" data-id="lib-001" data-stock="5">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="harry-potter.jpg" alt="Harry Potter y la piedra"></a>
+                            <a href="#"><img src="https://libreriapensar.com/wp-content/uploads/2020/10/9789585234048-1.jpg" alt="Harry Potter y la piedra"></a>
                         </div>
                         <h3>Harry Potter y la piedra</h3>
                         <p class="autor-libro">J.K. Rowling</p>
-                        <p class="precio"><strong>$350.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-002" data-stock="3">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="cien-anos.jpg" alt="Cien años de soledad"></a>
+                            <a href="#"><img src="https://th.bing.com/th/id/R.d5b8415fcb35fb1d5450f83146a7d716?rik=fHhmU%2fiVShGnCw&pid=ImgRaw&r=0" alt="Cien años de soledad"></a>
                         </div>
                         <h3>Cien años de soledad</h3>
                         <p class="autor-libro">Gabriel García Márquez</p>
-                        <p class="precio"><strong>$420.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-003" data-stock="0">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="insoportable.jpg" alt="La insoportable levedad del ser"></a>
+                            <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1660177779i/61931275.jpg" alt="La insoportable levedad del ser"></a>
                         </div>
                         <h3>La insoportable levedad del ser</h3>
                         <p class="autor-libro">Milan Kundera</p>
-                        <p class="precio"><strong>$380.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-004" data-stock="8">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="como-agua.jpg" alt="Como agua para chocolate"></a>
+                            <a href="#"><img src="https://www.isliada.org/static/images/2018/11/Como-agua-para-chocolate.jpg" alt="Como agua para chocolate"></a>
                         </div>
                         <h3>Como agua para chocolate</h3>
                         <p class="autor-libro">Laura Esquivel</p>
-                        <p class="precio"><strong>$290.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        
+<button class="boton-ver">Ver más</button>
                     </div>
 
-                    <!-- 8 Libros NUEVOS con portadas específicas -->
                     <div class="tarjeta-libro" data-id="lib-101" data-stock="4">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El amor en los tiempos del cólera (Debolsillo) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Love_in_the_Time_of_Cholera.jpg/220px-Love_in_the_Time_of_Cholera.jpg" alt="El amor en los tiempos del cólera"></a>
+                            <a href="#"><img src="https://m.media-amazon.com/images/I/91IxbReQwhL.jpg" alt="El amor en los tiempos del cólera"></a>
                         </div>
                         <h3>El amor en los tiempos del cólera</h3>
                         <p class="autor-libro">Gabriel García Márquez</p>
-                        <p class="precio"><strong>$390.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-102" data-stock="2">
                         <div class="contenedor-imagen">
-                            <!-- Portada de 1984 (Edición Signet / Ojo del Gran Hermano) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/1984first.jpg/220px-1984first.jpg" alt="1984"></a>
+                            <a href="#"><img src="https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg" alt="1984"></a>
                         </div>
                         <h3>1984</h3>
                         <p class="autor-libro">George Orwell</p>
-                        <p class="precio"><strong>$310.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+<button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-103" data-stock="6">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El principito (Acuarela original) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/El_principito.jpg/220px-El_principito.jpg" alt="El principito"></a>
+                            <a href="#"><img src="https://th.bing.com/th/id/R.dc9e50ecbce3ac803c773df50e1eb8cd?rik=Xd7npdQtcnXzHQ&riu=http%3a%2f%2fellector.com.py%2fproduct_photos%2f24b89be1%2fa8c113700eae2924163eaccf5946034b.jpg&ehk=HPRD%2bYJ9YCxDzC%2b0ai%2bnKqHdjkSK5iJTry%2bnDPpuEL4%3d&risl=&pid=ImgRaw&r=0" alt="El principito"></a>
                         </div>
                         <h3>El principito</h3>
                         <p class="autor-libro">Antoine de Saint-Exupéry</p>
-                        <p class="precio"><strong>$220.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-104" data-stock="0">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Fahrenheit 451 (Primera edición Ballantine) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Fahrenheit_451_1st_ed_cover.jpg/220px-Fahrenheit_451_1st_ed_cover.jpg" alt="Fahrenheit 451"></a>
+                            <a href="#"><img src="https://m.media-amazon.com/images/I/71LE8Hi+pbL._SL1500_.jpg" alt="Fahrenheit 451"></a>
                         </div>
                         <h3>Fahrenheit 451</h3>
                         <p class="autor-libro">Ray Bradbury</p>
-                        <p class="precio"><strong>$280.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-105" data-stock="5">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El código Da Vinci (Edición Umbriel / Mona Lisa) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Da_Vinci_Code.jpg/220px-Da_Vinci_Code.jpg" alt="El código Da Vinci"></a>
+                            <a href="#"><img src="https://tse4.mm.bing.net/th/id/OIP.12yDgvAm_1d0cVJ1nHL66gHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="El código Da Vinci"></a>
                         </div>
                         <h3>El código Da Vinci</h3>
                         <p class="autor-libro">Dan Brown</p>
-                        <p class="precio"><strong>$360.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-106" data-stock="7">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Los juegos del hambre (Sinsajo original) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/The_Hunger_Games_cover.jpg/220px-The_Hunger_Games_cover.jpg" alt="Los juegos del hambre"></a>
+                            <a href="#"><img src="https://th.bing.com/th/id/R.89bf7b42421b4c64bd44827a1092c4c1?rik=DBMSG%2fFS4LYoiA&riu=http%3a%2f%2floslibrosdelbuho.es%2fwp-content%2fuploads%2f2015%2f10%2fLos-Juegos-del-Hambre.jpg&ehk=Iy5pRdCiG1kBX0xeCshyrEx%2f%2bqQ7%2fSaXfL9OCCHeNEA%3d&risl=&pid=ImgRaw&r=0" alt="Los juegos del hambre"></a>
                         </div>
                         <h3>Los juegos del hambre</h3>
                         <p class="autor-libro">Suzanne Collins</p>
-                        <p class="precio"><strong>$340.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-107" data-stock="3">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El hobbit (Edición Minotauro) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/The_Hobbit_cover.jpg/220px-The_Hobbit_cover.jpg" alt="El hobbit"></a>
+                            <a href="#"><img src="https://m.media-amazon.com/images/I/91GSTr5rPqL._SL1500_.jpg" alt="El hobbit"></a>
                         </div>
                         <h3>El hobbit</h3>
                         <p class="autor-libro">J.R.R. Tolkien</p>
-                        <p class="precio"><strong>$410.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
 
                     <div class="tarjeta-libro" data-id="lib-108" data-stock="9">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Cumbres borrascosas (Edición clásica) -->
-                            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Wuthering_Heights.jpg/220px-Wuthering_Heights.jpg" alt="Cumbres borrascosas"></a>
+                            <a href="#"><img src="https://m.media-amazon.com/images/I/815v9re-uIL._SL1500_.jpg" alt="Cumbres borrascosas"></a>
                         </div>
                         <h3>Cumbres borrascosas</h3>
                         <p class="autor-libro">Emily Brontë</p>
-                        <p class="precio"><strong>$270.00</strong></p>
-                        <button class="boton-agregar">Agregar al carrito</button>
+                        <button class="boton-ver">Ver más</button>
                     </div>
                 </div>
             </section>
@@ -199,10 +201,9 @@
                 </div>
                 
                 <div class="carrusel-libros" id="carrusel-principal">
-                    <!-- 5 Libros originales (visibles) -->
                     <div class="tarjeta-libro" data-id="lib-006" data-stock="4">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="fuerte-es-el-silencio.jpg" alt="Fuerte es el silencio"></a>
+                            <a href="#"><img src="https://tse1.mm.bing.net/th/id/OIP.8d8kEwPGZ-x3dJqGP1XScAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Fuerte es el silencio"></a>
                         </div>
                         <h3>Fuerte es el silencio</h3>
                         <p class="autor-libro">Elena Poniatowska</p>
@@ -212,7 +213,7 @@
 
                     <div class="tarjeta-libro" data-id="lib-007" data-stock="6">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="rayuela.jpg" alt="Rayuela"></a>
+                            <a href="#"><img src="https://resizer.glanacion.com/resizer/v2/primera-caratula-de-rayuela-publicada-el-28-de-Z7VMTPR5KJGPDNUG776X5KCKHA.png?auth=9aa3bcf1bf784345f36c3c6a2a35f425221b5fc7d7cd7b55eb46d8bc24193581&width=420&height=633&quality=70&smart=true" alt="Rayuela"></a>
                         </div>
                         <h3>Rayuela</h3>
                         <p class="autor-libro">Julio Cortázar</p>
@@ -222,9 +223,9 @@
 
                     <div class="tarjeta-libro" data-id="lib-008" data-stock="1">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="ley-de-heroes.jpg" alt="La ley de los héroes"></a>
+                            <a href="#"><img src="https://tse2.mm.bing.net/th/id/OIP.9mEGar05VAjVrATuZtj82AHaKk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="La ley de los héroes"></a>
                         </div>
-                        <h3>La ley de los héroes</h3>
+                        <h3>La ley de herodes</h3>
                         <p class="autor-libro">Jorge Ibargüengoitia</p>
                         <p class="precio"><strong>$150.00</strong></p>
                         <button class="boton-agregar">Agregar al carrito</button>
@@ -232,7 +233,7 @@
 
                     <div class="tarjeta-libro" data-id="lib-009" data-stock="0">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="arrancame-la-vida.jpg" alt="Arráncame la vida"></a>
+                            <a href="#"><img src="https://th.bing.com/th/id/R.b0350a3a762e26c3a145a277514ad237?rik=M0Ve9dKoikzSXQ&riu=http%3a%2f%2felemblob.blob.core.windows.net%2fmedia%2farrancame-la-vida-angeles-mastretta-1848-mlu4373427457_052013-f57b39e8d1ec21_300h.jpg&ehk=kyjP8JwrkVsdgQBs0hrM5tWmFUd2w%2b%2fnWoruYNWXVbI%3d&risl=&pid=ImgRaw&r=0" alt="Arráncame la vida"></a>
                         </div>
                         <h3>Arráncame la vida</h3>
                         <p class="autor-libro">Ángeles Mastretta</p>
@@ -242,7 +243,7 @@
 
                     <div class="tarjeta-libro" data-id="lib-010" data-stock="7">
                         <div class="contenedor-imagen">
-                            <a href="#"><img src="una-habitacion.jpg" alt="Una habitación propia"></a>
+                            <a href="#"><img src="https://2.bp.blogspot.com/-Ln5u-hS_b8Q/WaszRYr4kzI/AAAAAAAAA4Y/JHdfv-0BuN4GoIJGNuSoukZBV3XK8VyXgCLcBGAs/s1600/VIRGINIA%2BWOOLF.jpg" alt="Una habitación propia"></a>
                         </div>
                         <h3>Una habitación propia</h3>
                         <p class="autor-libro">Virginia Woolf</p>
@@ -250,7 +251,6 @@
                         <button class="boton-agregar">Agregar al carrito</button>
                     </div>
 
-                    <!-- 2 Libros originales (ocultos) -->
                     <div class="tarjeta-libro libro-oculto" data-id="lib-011" data-stock="3" style="display: none;">
                         <div class="contenedor-imagen">
                             <a href="#"><img src="https://imgs.search.brave.com/cqf3YW87iP2CQuDy16PWhBSkRBz95P-34wnaUyNUNUc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zczM2/NS5saXZlcnBvb2wu/Y29tLm14L3hsLzEx/OTA0MjI2MDMuanBn" alt="Las Batallas en el Desierto"></a>
@@ -271,10 +271,8 @@
                         <button class="boton-agregar">Agregar al carrito</button>
                     </div>
 
-                    <!-- 8 Libros NUEVOS (ocultos, con portadas específicas) -->
                     <div class="tarjeta-libro libro-oculto" data-id="lib-201" data-stock="4" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Drácula (Primera edición amarilla) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dracula_1st_ed_cover.jpg/220px-Dracula_1st_ed_cover.jpg" alt="Drácula"></a>
                         </div>
                         <h3>Drácula</h3>
@@ -285,7 +283,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-202" data-stock="6" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Frankenstein (Primera edición 1818) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Frankenstein_1818.jpg/220px-Frankenstein_1818.jpg" alt="Frankenstein"></a>
                         </div>
                         <h3>Frankenstein</h3>
@@ -296,7 +293,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-203" data-stock="2" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Orgullo y prejuicio (Edición clásica) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/PrideAndPrejudice_FirstEdition.jpg/220px-PrideAndPrejudice_FirstEdition.jpg" alt="Orgullo y prejuicio"></a>
                         </div>
                         <h3>Orgullo y prejuicio</h3>
@@ -307,7 +303,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-204" data-stock="5" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Don Quijote (Edición príncipe 1605) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Don_Quijote_de_la_Mancha_1605.jpg/220px-Don_Quijote_de_la_Mancha_1605.jpg" alt="Don Quijote de la Mancha"></a>
                         </div>
                         <h3>Don Quijote de la Mancha</h3>
@@ -318,7 +313,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-205" data-stock="7" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de La sombra del viento (Edición Planeta) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/La_sombra_del_viento.jpg/220px-La_sombra_del_viento.jpg" alt="La sombra del viento"></a>
                         </div>
                         <h3>La sombra del viento</h3>
@@ -329,7 +323,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-206" data-stock="3" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El nombre de la rosa (Edición Bompiani) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Il_nome_della_rosa.jpg/220px-Il_nome_della_rosa.jpg" alt="El nombre de la rosa"></a>
                         </div>
                         <h3>El nombre de la rosa</h3>
@@ -340,7 +333,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-207" data-stock="8" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de El retrato de Dorian Gray (Edición 1891) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/The_Picture_of_Dorian_Gray.jpg/220px-The_Picture_of_Dorian_Gray.jpg" alt="El retrato de Dorian Gray"></a>
                         </div>
                         <h3>El retrato de Dorian Gray</h3>
@@ -351,7 +343,6 @@
 
                     <div class="tarjeta-libro libro-oculto" data-id="lib-208" data-stock="0" style="display: none;">
                         <div class="contenedor-imagen">
-                            <!-- Portada de Moby Dick (Edición clásica) -->
                             <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Moby-Dick.jpg/220px-Moby-Dick.jpg" alt="Moby Dick"></a>
                         </div>
                         <h3>Moby Dick</h3>
@@ -377,8 +368,7 @@
             </section>
         </div>
     </main>
-
-    <!-- ================= FOOTER ================= -->
+        <!-- ================= FOOTER ================= -->
     <footer>
         <div class="contenedor">
             <div class="footer-grid">
@@ -442,151 +432,25 @@
         </div>
     </div>
 
-    <!-- ================= SCRIPT INTEGRADO ================= -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- 1. LÓGICA DE STOCK ---
-            const tarjetas = document.querySelectorAll('.tarjeta-libro');
-            tarjetas.forEach(tarjeta => {
-                const stock = parseInt(tarjeta.getAttribute('data-stock'));
-                const boton = tarjeta.querySelector('.boton-agregar');
-                if (stock === 0 && boton) {
-                    boton.textContent = 'Agotado';
-                    boton.classList.add('agotado');
-                    boton.disabled = true;
-                }
-            });
-
-            // --- 2. LÓGICA DE "VER MÁS" ---
-            const btnVerMas = document.getElementById('btn-ver-mas');
-            const librosOcultos = document.querySelectorAll('.libro-oculto');
-            let mostrandoExtra = false;
-
-            if (btnVerMas) {
-                btnVerMas.addEventListener('click', function() {
-                    librosOcultos.forEach(libro => {
-                        libro.style.display = mostrandoExtra ? 'none' : 'flex';
-                    });
-                    mostrandoExtra = !mostrandoExtra;
-                    btnVerMas.textContent = mostrandoExtra ? 'Ver menos' : 'Ver más';
-                });
-            }
-
-            // --- 3. LÓGICA DEL CARRITO ---
-            let carrito = []; 
-
-            const btnCarritoHeader = document.getElementById('btn-carrito');
-            const modalCarrito = document.getElementById('modal-carrito');
-            const btnCerrarModal = document.getElementById('btn-cerrar-modal');
-            const listaCarrito = document.getElementById('lista-carrito');
-            const totalCarrito = document.getElementById('total-carrito');
-            const btnVaciar = document.getElementById('btn-vaciar');
-            const btnPagar = document.getElementById('btn-pagar');
-
-            document.addEventListener('click', function(e) {
-                const boton = e.target.closest('.boton-agregar');
-                
-                if (boton) {
-                    e.preventDefault();
-                    
-                    if (boton.disabled || boton.classList.contains('agotado')) {
-                        return;
-                    }
-
-                    const tarjeta = boton.closest('.tarjeta-libro');
-                    const id = tarjeta.getAttribute('data-id');
-                    const titulo = tarjeta.querySelector('h3').textContent.trim();
-                    const precioTexto = tarjeta.querySelector('.precio strong').textContent;
-                    const precio = parseFloat(precioTexto.replace('$', '').trim());
-
-                    const libroExistente = carrito.find(libro => libro.id === id);
-
-                    if (libroExistente) {
-                        libroExistente.cantidad++;
-                    } else {
-                        carrito.push({
-                            id: id,
-                            titulo: titulo,
-                            precio: precio,
-                            cantidad: 1
-                        });
-                    }
-
-                    alert('✅ ¡Agregaste "' + titulo + '" al carrito!');
-                    renderizarCarrito();
-                }
-            });
-
-            if (btnCarritoHeader) {
-                btnCarritoHeader.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    modalCarrito.classList.add('activo');
-                    renderizarCarrito();
-                });
-            }
-
-            if (btnCerrarModal) {
-                btnCerrarModal.addEventListener('click', function() {
-                    modalCarrito.classList.remove('activo');
-                });
-            }
-
-            window.addEventListener('click', function(e) {
-                if (e.target === modalCarrito) {
-                    modalCarrito.classList.remove('activo');
-                }
-            });
-
-            if (btnVaciar) {
-                btnVaciar.addEventListener('click', function() {
-                    carrito = []; 
-                    renderizarCarrito();
-                });
-            }
-
-            if (btnPagar) {
-                btnPagar.addEventListener('click', function() {
-                    if (carrito.length > 0) {
-                        alert('¡Gracias por tu compra! Total: ' + totalCarrito.textContent);
-                        carrito = [];
-                        renderizarCarrito();
-                        modalCarrito.classList.remove('activo');
-                    }
-                });
-            }
-
-            function renderizarCarrito() {
-                listaCarrito.innerHTML = '';
-
-                if (carrito.length === 0) {
-                    listaCarrito.innerHTML = '<p class="mensaje-vacio">Tu carrito está vacío. ¡Agrega algunos libros!</p>';
-                    totalCarrito.textContent = '$0.00';
-                    btnPagar.disabled = true;
-                    btnVaciar.disabled = true;
-                } else {
-                    let total = 0;
-                    carrito.forEach(libro => {
-                        const item = document.createElement('div');
-                        item.classList.add('item-carrito');
-                        item.innerHTML = `
-                            <div class="item-carrito-info">
-                                <strong>${libro.titulo}</strong>
-                                <span>${libro.cantidad} x $${libro.precio.toFixed(2)}</span>
-                            </div>
-                            <span>$${(libro.cantidad * libro.precio).toFixed(2)}</span>
-                        `;
-                        listaCarrito.appendChild(item);
-                        total += libro.cantidad * libro.precio;
-                    });
-                    totalCarrito.textContent = `$${total.toFixed(2)}`;
-                    btnPagar.disabled = false;
-                    btnVaciar.disabled = false;
-                }
-            }
-        });
-    </script>
+    <!-- ================= NOTIFICACIÓN FLOTANTE (TOAST) ================= -->
+    <div id="notificacion" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2e7d32;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        font-size: 1rem;
+        font-weight: bold;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        gap: 10px;
+    ">
+        ✅ <span id="texto-notificacion">Libro agregado</span>
+    </div>
+     <script src="script.js"></script>
 </body>
 </html>
-
-      
